@@ -3,11 +3,6 @@ container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components: []
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -21,3 +16,26 @@ components:
     name: login_button
     layout_properties: {}
     components: []
+- name: content_panel
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: default}
+  components:
+  - name: card_1
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'TSHWPE,HSNCAF', full_width_row: true}
+    components:
+    - name: tagline_label
+      properties: {text: Your tagline goes here, align: center, role: headline}
+      type: Label
+      layout_properties: {grid_position: 'THLTQH,QQWTZR', full_width_row: true}
+    - name: important_info_label
+      properties: {text: Important information for new users goes here, align: center,
+        visible: true, role: title}
+      type: Label
+      layout_properties: {grid_position: 'VPULVI,TFVPDT', full_width_row: true}
+    - name: cta_button
+      properties: {text: Your CTA here, role: filled-button}
+      type: Button
+      layout_properties: {grid_position: 'ZQAQJY,ETJXDL', full_width_row: true}
