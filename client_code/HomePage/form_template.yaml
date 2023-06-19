@@ -21,13 +21,13 @@ components:
   type: ColumnPanel
   layout_properties: {slot: default}
   components:
-  - name: card_1
+  - name: headline_card
     properties: {}
     type: ColumnPanel
     layout_properties: {grid_position: 'TSHWPE,HSNCAF', full_width_row: true}
     components:
     - name: tagline_label
-      properties: {text: Your tagline goes here, align: center, role: headline}
+      properties: {text: Your tagline goes here, align: center, role: display}
       type: Label
       layout_properties: {grid_position: 'THLTQH,QQWTZR', full_width_row: true}
     - name: important_info_label
@@ -39,3 +39,30 @@ components:
       properties: {text: Your CTA here, role: filled-button}
       type: Button
       layout_properties: {grid_position: 'ZQAQJY,ETJXDL', full_width_row: true}
+  - name: customers_card
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'UOKYYI,MUWOVN', full_width_row: true}
+    components:
+    - name: customers_title_label
+      properties: {role: title, text: Trusted by the world's Leading organisations,
+        icon: 'fa:arrow-down', icon_align: right}
+      type: Label
+      layout_properties: {grid_position: 'LJUCMV,UZTCPE'}
+    - name: customers_column_panel
+      properties: {}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'PKAKIM,ZOPKGW'}
+      components:
+      - name: image_1
+        properties: {}
+        type: Image
+        layout_properties: {grid_position: 'ALDAVB,ITIEJB'}
+      - name: image_2
+        properties: {}
+        type: Image
+        layout_properties: {grid_position: 'ALDAVB,UYIABD'}
+      - name: image_3
+        properties: {}
+        type: Image
+        layout_properties: {grid_position: 'ALDAVB,IRKXSF'}
