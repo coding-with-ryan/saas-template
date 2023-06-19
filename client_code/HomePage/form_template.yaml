@@ -55,7 +55,7 @@ components:
       layout_properties: {grid_position: 'PKAKIM,ZOPKGW'}
       components:
       - name: label_1
-        properties: {}
+        properties: {align: center}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,ITIEJB YCVJKN,KUTEOG'}
       - name: image_1
@@ -63,7 +63,7 @@ components:
         type: Image
         layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ'}
       - name: label_2
-        properties: {}
+        properties: {align: center}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY'}
       - name: image_2
@@ -71,7 +71,7 @@ components:
         type: Image
         layout_properties: {grid_position: 'ALDAVB,UYIABD IZQLYB,HBUFNR'}
       - name: label_3
-        properties: {}
+        properties: {align: center}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,IRKXSF JONCOF,NIYLON'}
       - name: image_3
