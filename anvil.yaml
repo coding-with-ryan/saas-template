@@ -1,8 +1,16 @@
-allow_embedding: false
-package_name: M3_App_2
-name: M3 App 2
-startup_form: Form1
-renamed: true
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
 dependencies: []
-services: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: HomePage}
+package_name: SaaS_Template_2
+allow_embedding: false
+name: SaaS Template 2
+runtime_options: {version: 3, client_version: '3', server_version: python3-full, server_spec: null}
+startup_form: null
+native_deps: {head_html: "\n<script type=\"module\">\n    window.anvilEnableLegacyClassNames();\n\
+    </script>\n<style>\n  @import url({{cdn-origin}}/runtime/css/bootstrap.css) layer(bootstrap);\n\
+    \  @import url({{cdn-origin}}/runtime/css/bootstrap-theme.min.css) layer(bootstrap);\n\
+    </style>\n"}
+renamed: true

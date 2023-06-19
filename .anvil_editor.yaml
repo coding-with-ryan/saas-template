@@ -1,8 +1,9 @@
 unique_ids:
   forms:
-    Form1: TUOTCOGBX262WAKNFDX7WF35RJS6FNKA
+    HomePage: TUOTCOGBX262WAKNFDX7WF35RJS6FNKA
   modules: {}
   server_modules: {}
   assets:
     standard-page.html: ULAFXLR62IBSMWBMN5E4AXJFXJAZHFUQ
     theme.css: SR2LRINPICQWJX2Z5UORSTTI3A2ABTBW
+    your-logo-here-low-resolution-logo-color-on-transparent-background.png: '1687182225622929593686151.4889'
