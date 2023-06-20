@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: HomePage}
+startup: {type: form, module: Main}
 package_name: SaaS_Template_2
 allow_embedding: false
 name: SaaS Template 2

@@ -12,64 +12,7 @@ components:
     properties: {}
     type: ColumnPanel
     layout_properties: {grid_position: 'ZNHJSN,SHDVWC'}
-    components:
-    - name: headline_card_copy_1
-      properties: {}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'TSHWPE,HSNCAF', full_width_row: true}
-      components:
-      - name: tagline_label_copy_1
-        properties: {text: Your tagline goes here, align: center, role: display}
-        type: Label
-        layout_properties: {grid_position: 'THLTQH,QQWTZR', full_width_row: true}
-      - name: important_info_label_copy_1
-        properties: {text: Important information for new users goes here, align: center,
-          visible: true, role: title}
-        type: Label
-        layout_properties: {grid_position: 'VPULVI,TFVPDT', full_width_row: true}
-      - name: cta_button
-        properties: {text: Your CTA here, role: filled-button}
-        type: Button
-        layout_properties: {grid_position: 'ZQAQJY,ETJXDL', full_width_row: true}
-    - name: customers_card_copy_1
-      properties: {}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'UOKYYI,MUWOVN', full_width_row: true}
-      components:
-      - name: customers_title_label_1
-        properties: {role: title, text: Trusted by the world's Leading organisations,
-          icon: 'fa:arrow-down', icon_align: right}
-        type: Label
-        layout_properties: {grid_position: 'LJUCMV,UZTCPE'}
-      - name: customers_column_panel_copy_1
-        properties: {}
-        type: ColumnPanel
-        layout_properties: {grid_position: 'PKAKIM,ZOPKGW'}
-        components:
-        - name: customer_name_1_label
-          properties: {align: center}
-          type: Label
-          layout_properties: {grid_position: 'ALDAVB,ITIEJB YCVJKN,KUTEOG'}
-        - name: customer_logo_1
-          properties: {}
-          type: Image
-          layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ'}
-        - name: customer_name_2_label
-          properties: {align: center}
-          type: Label
-          layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY'}
-        - name: customer_logo_2
-          properties: {}
-          type: Image
-          layout_properties: {grid_position: 'ALDAVB,UYIABD IZQLYB,HBUFNR'}
-        - name: customer_name_3_label
-          properties: {align: center}
-          type: Label
-          layout_properties: {grid_position: 'ALDAVB,IRKXSF JONCOF,NIYLON'}
-        - name: customer_logo_3
-          properties: {}
-          type: Image
-          layout_properties: {grid_position: 'ALDAVB,IRKXSF DCGTKM,FPNXQT'}
+    components: []
 - type: FlowPanel
   properties: {}
   name: navbar_links

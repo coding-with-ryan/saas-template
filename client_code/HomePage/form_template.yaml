@@ -16,7 +16,7 @@ components:
     name: login_button
     layout_properties: {}
     components: []
-- name: content_panel
+- name: body_panel
   properties: {}
   type: ColumnPanel
   layout_properties: {slot: default}
