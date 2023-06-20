@@ -15,26 +15,24 @@ class Main(MainTemplate):
 
     # Any code you write here will run before the form opens.
     self.content_panel.add_component(Home(), full_width_row=True)
-
-    if anvil.users.get_user():
-      self.create_account_button.visible = False
+    self.check_login_buttons()
 
   def create_account_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.login_with_form(allow_cancel=True)
 
-    self.switch_login_buttons()
+    self.check_login_buttons()
       
 
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.login_with_form(allow_cancel=True)
-    self.switch_login_buttons()
+    self.check_login_buttons()
 
   def sign_out_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.logout()
-    self.switch_login_buttons()
+    self.check_login_buttons()
 
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -46,7 +44,7 @@ class Main(MainTemplate):
     self.content_panel.clear()
     self.content_panel.add_component(Home(), full_width_row=True)
 
-  def switch_login_buttons(self):
+  def check_login_buttons(self):
     if anvil.users.get_user():
       self.create_account_button.visible = False
       self.login_button.visible = False
