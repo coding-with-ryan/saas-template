@@ -64,22 +64,27 @@ components:
         layout_properties: {grid_position: 'ALDAVB,IRKXSF DCGTKM,FPNXQT', full_width_row: true}
         data_bindings: []
   - name: features_card
-    properties: {}
+    properties: {col_widths: '{"HOXDNU":30,"ZJSMSE":1,"TJCNMP":29}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'JEABIY,FOHKGM', full_width_row: true}
     components:
     - name: label_1
-      properties: {text: Features headline}
+      properties: {text: Features headline, align: right}
       type: Label
       layout_properties: {grid_position: 'HADSCJ,HOXDNU VOVQZU,XDJWYS', full_width_row: true}
     - name: label_2
-      properties: {text: Short and punchy into to all the features your product has}
+      properties: {text: Short and punchy into to all the features your product has,
+        align: right}
       type: Label
       layout_properties: {grid_position: 'HADSCJ,HOXDNU OHFMVS,QDNYDG'}
     - name: cta_button_copy_1
-      properties: {text: Your CTA here, role: filled-button, align: left}
+      properties: {text: Your CTA here, role: filled-button, align: right}
       type: Button
       layout_properties: {grid_position: 'HADSCJ,HOXDNU AIXJEI,AKYKQT'}
+    - name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'HADSCJ,ZJSMSE'}
     - name: features_repeating_panel
       properties: {item_template: Home.FeatureRow}
       type: RepeatingPanel
