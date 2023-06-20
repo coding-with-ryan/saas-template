@@ -19,13 +19,11 @@ components:
   layout_properties: {slot: nav-right}
   components:
   - name: navbar_links_copy_1
-    properties: {}
+    properties: {align: center}
     type: FlowPanel
     components:
-    - name: login_button_copy_1
-      properties: {role: title, url: '', align: center, tooltip: '', border: '', foreground: '',
-        visible: true, text: Login, font_size: null, wrap_on: mobile, font: '', col_spacing: large,
-        spacing_above: large, icon_align: left, col_widths: '{}', spacing_below: large,
-        italic: false, background: '', bold: false, underline: false, icon: ''}
-      type: Link
+    - name: login_button
+      properties: {text: Login}
+      type: Button
       layout_properties: {}
+    layout_properties: {}
