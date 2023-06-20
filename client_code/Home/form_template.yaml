@@ -3,7 +3,7 @@ components:
 - name: content_panel
   properties: {}
   type: ColumnPanel
-  layout_properties: {grid_position: 'VVUZGK,KDMOFP'}
+  layout_properties: {grid_position: 'VVUZGK,KDMOFP', full_width_row: true}
   components:
   - name: headline_card
     properties: {}
@@ -32,40 +32,66 @@ components:
       properties: {role: title, text: Trusted by the world's Leading organisations,
         icon: 'fa:arrow-down', icon_align: right}
       type: Label
-      layout_properties: {grid_position: 'LJUCMV,UZTCPE'}
+      layout_properties: {grid_position: 'LJUCMV,UZTCPE', full_width_row: true}
     - name: customers_column_panel_copy_1
       properties: {}
       type: ColumnPanel
-      layout_properties: {grid_position: 'PKAKIM,ZOPKGW'}
+      layout_properties: {grid_position: 'PKAKIM,ZOPKGW', full_width_row: true}
       components:
       - name: customer_name_1_label
-        properties: {align: center, text: Customer 1}
+        properties: {align: center, text: Your Customer 1}
         type: Label
-        layout_properties: {grid_position: 'ALDAVB,ITIEJB YCVJKN,KUTEOG'}
+        layout_properties: {grid_position: 'ALDAVB,ITIEJB YCVJKN,KUTEOG', full_width_row: true}
       - name: customer_logo_1
-        properties: {source: _/theme/valentin-petkov-ooKXjakIyTw-unsplash.jpg}
+        properties: {source: _/theme/june-andrei-george-dR0-9HfpLvI-unsplash.png}
         type: Image
-        layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ'}
+        layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ', full_width_row: true}
       - name: customer_name_2_label
-        properties: {align: center, text: Customer 2}
+        properties: {align: center, text: Your Customer 2}
         type: Label
-        layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY'}
+        layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY', full_width_row: true}
       - name: customer_logo_2
-        properties: {source: _/theme/jay-wennington-fH_Oag_bA1c-unsplash(1).jpg}
+        properties: {source: _/theme/minimo-vUS7aqOz1PM-unsplash.png}
         type: Image
-        layout_properties: {grid_position: 'ALDAVB,UYIABD IZQLYB,HBUFNR'}
+        layout_properties: {grid_position: 'ALDAVB,UYIABD IZQLYB,HBUFNR', full_width_row: true}
       - name: customer_name_3_label
-        properties: {align: center, text: Customer 3}
+        properties: {align: center, text: Your Customer 3}
         type: Label
-        layout_properties: {grid_position: 'ALDAVB,IRKXSF JONCOF,NIYLON'}
+        layout_properties: {grid_position: 'ALDAVB,IRKXSF JONCOF,NIYLON', full_width_row: true}
       - name: customer_logo_3
-        properties: {}
+        properties: {source: _/theme/thiago-cardoso-fTnwilLbg6w-unsplash 1.png}
         type: Image
-        layout_properties: {grid_position: 'ALDAVB,IRKXSF DCGTKM,FPNXQT'}
-        data_bindings:
-        - {property: source, code: '', writeback: true}
-  - name: column_panel_1
+        layout_properties: {grid_position: 'ALDAVB,IRKXSF DCGTKM,FPNXQT', full_width_row: true}
+        data_bindings: []
+  - name: features_card
     properties: {}
     type: ColumnPanel
-    layout_properties: {grid_position: 'JEABIY,FOHKGM'}
+    layout_properties: {grid_position: 'JEABIY,FOHKGM', full_width_row: true}
+    components:
+    - name: label_1
+      properties: {text: Features headline}
+      type: Label
+      layout_properties: {grid_position: 'HADSCJ,HOXDNU VOVQZU,XDJWYS', full_width_row: true}
+    - name: label_2
+      properties: {text: Short and punchy into to all the features your product has}
+      type: Label
+      layout_properties: {grid_position: 'HADSCJ,HOXDNU OHFMVS,QDNYDG'}
+    - name: cta_button_copy_1
+      properties: {text: Your CTA here, role: filled-button, align: left}
+      type: Button
+      layout_properties: {grid_position: 'HADSCJ,HOXDNU AIXJEI,AKYKQT'}
+    - name: features_data_grid
+      properties:
+        columns:
+        - {id: JKSDUP, title: Column 1, data_key: column_1}
+        - {id: VJQQOR, title: Column 2, data_key: column_2}
+        - {id: OJLQEN, title: Column 3, data_key: column_3}
+        show_page_controls: false
+        auto_header: false
+      type: DataGrid
+      components:
+      - name: features_repeating_panel
+        properties: {item_template: Home.RowTemplate1}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'HADSCJ,EAJRMF', full_width_row: true}
 is_package: true
