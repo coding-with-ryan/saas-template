@@ -39,29 +39,31 @@ components:
       layout_properties: {grid_position: 'PKAKIM,ZOPKGW'}
       components:
       - name: customer_name_1_label
-        properties: {align: center}
+        properties: {align: center, text: Customer 1}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,ITIEJB YCVJKN,KUTEOG'}
       - name: customer_logo_1
-        properties: {}
+        properties: {source: _/theme/valentin-petkov-ooKXjakIyTw-unsplash.jpg}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ'}
       - name: customer_name_2_label
-        properties: {align: center}
+        properties: {align: center, text: Customer 2}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY'}
       - name: customer_logo_2
-        properties: {}
+        properties: {source: _/theme/jay-wennington-fH_Oag_bA1c-unsplash(1).jpg}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,UYIABD IZQLYB,HBUFNR'}
       - name: customer_name_3_label
-        properties: {align: center}
+        properties: {align: center, text: Customer 3}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,IRKXSF JONCOF,NIYLON'}
       - name: customer_logo_3
         properties: {}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,IRKXSF DCGTKM,FPNXQT'}
+        data_bindings:
+        - {property: source, code: '', writeback: true}
   - name: column_panel_1
     properties: {}
     type: ColumnPanel
