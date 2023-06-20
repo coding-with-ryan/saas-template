@@ -9,5 +9,6 @@ class Home(HomeTemplate):
 
     # Any code you write here will run before the form opens.
     self.features_repeating_panel.items = ({"name": "feature 1"}, {"name": "feature 2"}, {"name": "feature 3"})
+    self.refresh_data_bindings()
 
 
