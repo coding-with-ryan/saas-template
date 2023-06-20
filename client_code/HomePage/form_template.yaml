@@ -54,7 +54,7 @@ components:
       type: ColumnPanel
       layout_properties: {grid_position: 'PKAKIM,ZOPKGW'}
       components:
-      - name: label_1
+      - name: customer_name_1_label
         properties: {align: center}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,ITIEJB YCVJKN,KUTEOG'}
@@ -62,7 +62,7 @@ components:
         properties: {}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ'}
-      - name: label_2
+      - name: customer_name_2_label
         properties: {align: center}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY'}
