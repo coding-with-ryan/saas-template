@@ -13,4 +13,5 @@ native_deps: {head_html: "\n<script type=\"module\">\n    window.anvilEnableLega
     </script>\n<style>\n  @import url({{cdn-origin}}/runtime/css/bootstrap.css) layer(bootstrap);\n\
     \  @import url({{cdn-origin}}/runtime/css/bootstrap-theme.min.css) layer(bootstrap);\n\
     </style>\n"}
+uplink_visible: true
 renamed: true
