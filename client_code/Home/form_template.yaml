@@ -24,13 +24,14 @@ components:
       type: Button
       layout_properties: {grid_position: 'ZQAQJY,ETJXDL', full_width_row: true}
   - name: customers_card
-    properties: {}
+    properties: {background: 'theme:Primary Container'}
     type: ColumnPanel
-    layout_properties: {grid_position: 'UOKYYI,MUWOVN', full_width_row: true}
+    layout_properties: {grid_position: 'UOKYYI,MUWOVN', full_width_row: true, row_background: 'theme:Primary
+        Container'}
     components:
     - name: customers_title_label
       properties: {role: title, text: Trusted by the world's Leading organisations,
-        icon: 'fa:arrow-down', icon_align: right}
+        icon: 'fa:arrow-down', icon_align: right, foreground: 'theme:On Primary Container'}
       type: Label
       layout_properties: {grid_position: 'LJUCMV,UZTCPE', full_width_row: true}
     - name: customers_column_panel_copy_1
@@ -39,27 +40,31 @@ components:
       layout_properties: {grid_position: 'PKAKIM,ZOPKGW', full_width_row: true}
       components:
       - name: customer_name_1_label
-        properties: {align: center, text: Your Customer 1}
+        properties: {align: center, text: Your Customer 1, foreground: 'theme:On Primary
+            Container', role: title}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,ITIEJB YCVJKN,KUTEOG', full_width_row: true}
       - name: customer_logo_1
-        properties: {source: _/theme/june-andrei-george-dR0-9HfpLvI-unsplash.png}
+        properties: {source: _/theme/june-andrei-george-dR0-9HfpLvI-unsplash.png,
+          height: '150'}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ', full_width_row: true}
       - name: customer_name_2_label
-        properties: {align: center, text: Your Customer 2}
+        properties: {align: center, text: Your Customer 2, role: title, foreground: 'theme:On
+            Primary Container'}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY', full_width_row: true}
       - name: customer_logo_2
-        properties: {source: _/theme/minimo-vUS7aqOz1PM-unsplash.png}
+        properties: {source: _/theme/minimo-vUS7aqOz1PM-unsplash.png, height: '150'}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,UYIABD IZQLYB,HBUFNR', full_width_row: true}
       - name: customer_name_3_label
-        properties: {align: center, text: Your Customer 3}
+        properties: {align: center, text: Your Customer 3, role: title, foreground: 'theme:On
+            Primary Container'}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,IRKXSF JONCOF,NIYLON', full_width_row: true}
       - name: customer_logo_3
-        properties: {source: _/theme/thiago-cardoso-fTnwilLbg6w-unsplash 1.png}
+        properties: {source: _/theme/thiago-cardoso-fTnwilLbg6w-unsplash 1.png, height: '150'}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,IRKXSF DCGTKM,FPNXQT', full_width_row: true}
         data_bindings: []
