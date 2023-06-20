@@ -80,4 +80,8 @@ components:
       properties: {text: Your CTA here, role: filled-button, align: left}
       type: Button
       layout_properties: {grid_position: 'HADSCJ,HOXDNU AIXJEI,AKYKQT'}
+    - name: features_repeating_panel
+      properties: {item_template: Home.FeatureRow}
+      type: RepeatingPanel
+      layout_properties: {grid_position: 'HADSCJ,TJCNMP'}
 is_package: true

@@ -1,0 +1,9 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: feature_label
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'SCFQKR,YERICN'}
+  data_bindings:
+  - {property: text, code: 'self.item[''name'']', writeback: false}
