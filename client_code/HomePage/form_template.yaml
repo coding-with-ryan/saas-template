@@ -62,7 +62,7 @@ components:
         properties: {}
         type: Image
         layout_properties: {grid_position: 'ALDAVB,ITIEJB PBTXGY,IDJHSJ'}
-      - name: customer_name_2_label
+      - name: customer_name_2_label_X
         properties: {align: center}
         type: Label
         layout_properties: {grid_position: 'ALDAVB,UYIABD PFJWRR,QYRMPY'}
