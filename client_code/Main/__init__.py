@@ -36,7 +36,7 @@ class Main(MainTemplate):
 
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    alert(StripePricing())
+    alert(StripePricing(), large=True)
 
   def home_button_click(self, **event_args):
     """This method is called when the button is clicked"""
