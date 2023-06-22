@@ -32,13 +32,12 @@ components:
       type: Button
       layout_properties: {}
       event_bindings: {click: create_account_button_click}
-    - name: sign_out_button
-      properties: {role: outlined-button, text: Sign out}
-      type: Button
-      layout_properties: {}
-      event_bindings: {click: sign_out_button_click}
     - name: upgrade_button
       properties: {role: outlined-button, text: Upgrade}
+      type: Button
+      event_bindings: {click: upgrade_button_click}
+    - name: sign_out_button
+      properties: {role: outlined-button, text: Sign out}
       type: Button
       layout_properties: {}
       event_bindings: {click: sign_out_button_click}

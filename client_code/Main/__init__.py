@@ -56,6 +56,12 @@ class Main(MainTemplate):
       self.create_account_button.visible = True
       self.login_button.visible = True
       self.sign_out_button.visible = False
+      self.upgrade_button.visible = False
+
+  def upgrade_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert(StripePricing(), large=True)
+
 
 
     
