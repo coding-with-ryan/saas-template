@@ -8,6 +8,11 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components: []
+- name: button_1
+  properties: {text: profeature, role: elevated-button}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_1_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
