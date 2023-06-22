@@ -4,43 +4,32 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 
+from functools import partial
+
 @anvil.server.callable
 def process_payment(user_id, amount):
     # Process a payment for a user
     # Implement your payment processing logic here
     pass
 
-# def check_user_subscription(func):
-#     def wrapper():
-#       # Check if the user is subscribed and up to date with payments
-#       user = anvil.users.get_user()
-#       if user:
-#         user_subscription = user["subscription"]
-#         if plan_needed == user_subscription:
-#             # Perform any additional checks if required, e.g., payment date, subscription status, etc.
-#             func()
-#         else:
-#             return "Permission denied."
-#       else:
-#         return "User not logged in."
-#     return wrapper
-
-def check_user_subscription(user_subscription):
-    def wrapper(f):
-      print(user_subscription)
-      def func(*arg, **kargs):
-        print(user_subscription)
-        return f(*args, **kargs)
-      return func
-    return wrapper
 
 # user_permission_check = check_user_subscription("THE USER SUB")(pro_feature)
 
-@check_user_subscription("THE USER SUB")
+def has_subscription(subscription):
+  return lambda user: user["subscription"] == subscription
+
+@anvil.server.callable(require_user=has_subscription("Pro"))
+def only_if_pro():
+  print("Only if you're pro")
+  
+
 @anvil.server.callable
+@check_user_subscription("THE USER SUB")
 def pro_feature(user_subscription):
   print("Look at you Pro!")
   return True
+
+# new_pro_feature = check_user_subscription("THE USER SUB")(pro_feature)
 
 @anvil.server.callable
 def process_payment(user_id, amount):
