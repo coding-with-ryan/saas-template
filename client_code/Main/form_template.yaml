@@ -37,6 +37,11 @@ components:
       type: Button
       layout_properties: {}
       event_bindings: {click: sign_out_button_click}
+    - name: upgrade_button
+      properties: {role: outlined-button, text: Upgrade}
+      type: Button
+      layout_properties: {}
+      event_bindings: {click: sign_out_button_click}
     layout_properties: {}
 - name: home_button
   properties: {text: Home, role: filled-button}

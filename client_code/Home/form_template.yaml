@@ -11,7 +11,7 @@ components:
     layout_properties: {grid_position: 'TSHWPE,HSNCAF', full_width_row: true}
     components:
     - name: important_info_label
-      properties: {text: Webpage goes here, align: center, visible: true, role: title}
+      properties: {text: Web app goes here, align: center, visible: true, role: title}
       type: Label
       layout_properties: {grid_position: 'VPULVI,TFVPDT', full_width_row: true}
 is_package: true

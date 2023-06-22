@@ -3,8 +3,10 @@ unique_ids:
     Home: '1687266336075951822278990.3427'
     Main: '1687266325069404055233867.3924'
     Pricing: '1687274033044334029896316.98267'
+    StripePricing: '1687426234454422139748119.2184'
   modules: {}
-  server_modules: {}
+  server_modules:
+    Subscriptions: '1687425144862586721439081.0061'
   assets:
     june-andrei-george-dR0-9HfpLvI-unsplash.png: '1687268297909437360240220.0404'
     minimo-vUS7aqOz1PM-unsplash.png: '1687268304731555956713042.2404'

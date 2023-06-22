@@ -1,0 +1,11 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+
+      <stripe-pricing-table pricing-table-id="prctbl_1NLjp1LfxhObmm8s7C8MthXQ"
+
+      publishable-key="pk_live_51Ley0BLfxhObmm8sWKRcuS3pbOjLIt5SFZfUKnIvBbEN2G56lQhaN58waLjFyL0bHBIvjUfrDdjNcrsCcPXFSn2w00CpQzWh5t">
+
+      </stripe-pricing-table>'}
+components: []
+is_package: true
