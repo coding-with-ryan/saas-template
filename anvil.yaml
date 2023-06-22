@@ -40,6 +40,15 @@ db_schema:
     - name: confirmed_email
       type: bool
       admin_ui: {order: 5, width: 200}
+    - name: email_confirmation_key
+      admin_ui: {width: 200}
+      type: string
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: subscription
+      admin_ui: {width: 200}
+      type: string
     title: Users
 uplink_visible: true
 renamed: true
