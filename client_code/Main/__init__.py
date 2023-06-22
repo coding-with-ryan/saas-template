@@ -6,7 +6,6 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 from ..Home import Home
-from ..Pricing import Pricing
 from ..StripePricing import StripePricing
 
 class Main(MainTemplate):
@@ -47,7 +46,12 @@ class Main(MainTemplate):
     if anvil.users.get_user():
       self.create_account_button.visible = False
       self.login_button.visible = False
+      
       self.sign_out_button.visible = True
+      if anvil.users.get_user()["subscription"] == "Free":
+        self.upgrade_button.visible = True
+      else:
+        self.upgrade_button.visible = False
     else:
       self.create_account_button.visible = True
       self.login_button.visible = True
