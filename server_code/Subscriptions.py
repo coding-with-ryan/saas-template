@@ -27,6 +27,7 @@ def process_payment(user_id, amount):
 
 def check_user_subscription(user_subscription):
     def wrapper(f):
+      print(user_subscription)
       def func(*arg, **kargs):
         print(user_subscription)
         return f(*args, **kargs)
@@ -39,6 +40,7 @@ def check_user_subscription(user_subscription):
 @anvil.server.callable
 def pro_feature(user_subscription):
   print("Look at you Pro!")
+  return True
 
 @anvil.server.callable
 def process_payment(user_id, amount):
