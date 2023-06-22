@@ -22,13 +22,6 @@ def has_subscription(subscription):
 def only_if_pro():
   print("Only if you're pro")
   
-
-@anvil.server.callable
-@check_user_subscription("THE USER SUB")
-def pro_feature(user_subscription):
-  print("Look at you Pro!")
-  return True
-
 # new_pro_feature = check_user_subscription("THE USER SUB")(pro_feature)
 
 @anvil.server.callable
