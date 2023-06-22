@@ -8,11 +8,6 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components: []
-- name: button_1
-  properties: {text: profeature, role: elevated-button}
-  type: Button
-  layout_properties: {slot: default}
-  event_bindings: {click: button_1_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -47,8 +42,8 @@ components:
       layout_properties: {}
       event_bindings: {click: sign_out_button_click}
     layout_properties: {}
-- name: home_button
-  properties: {text: Home, role: filled-button}
-  type: Button
+- name: logo
+  properties: {source: _/theme/percentage-of-high-resolution-logo-color-on-transparent-background.png,
+    height: 228}
+  type: Image
   layout_properties: {slot: title}
-  event_bindings: {click: home_button_click}

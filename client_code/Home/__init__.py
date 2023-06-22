@@ -13,3 +13,13 @@ class Home(HomeTemplate):
 
     # Any code you write here will run before the form opens.
 
+  def calculate_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.number_1_textbox.text and self.number_2_textbox.text:
+      anvil.server.call('calculate_percentage_of')
+    else:
+      Notification("Please enter two numbers.")
+    
+    
+
+
