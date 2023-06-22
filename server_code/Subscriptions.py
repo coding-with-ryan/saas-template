@@ -10,24 +10,34 @@ def process_payment(user_id, amount):
     # Implement your payment processing logic here
     pass
 
-def check_user_subscription(func):
-    def wrapper():
-      # Check if the user is subscribed and up to date with payments
-      user = anvil.users.get_user()
-      if user:
-        user_subscription = user["subscription"]
-        if plan_needed == user_subscription:
-            # Perform any additional checks if required, e.g., payment date, subscription status, etc.
-            func()
-        else:
-            return "Permission denied."
-      else:
-        return "User not logged in."
+# def check_user_subscription(func):
+#     def wrapper():
+#       # Check if the user is subscribed and up to date with payments
+#       user = anvil.users.get_user()
+#       if user:
+#         user_subscription = user["subscription"]
+#         if plan_needed == user_subscription:
+#             # Perform any additional checks if required, e.g., payment date, subscription status, etc.
+#             func()
+#         else:
+#             return "Permission denied."
+#       else:
+#         return "User not logged in."
+#     return wrapper
+
+def check_user_subscription(user_subscription):
+    def wrapper(f):
+      def func(*arg, **kargs):
+        print(user_subscription)
+        return f(*args, **kargs)
+      return func
     return wrapper
 
+# user_permission_check = check_user_subscription("THE USER SUB")(pro_feature)
+
+@check_user_subscription("THE USER SUB")
 @anvil.server.callable
-@check_user_subscription
-def pro_feature():
+def pro_feature(user_subscription):
   print("Look at you Pro!")
 
 @anvil.server.callable
