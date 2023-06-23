@@ -12,17 +12,12 @@ def process_payment(user_id, amount):
     # Implement your payment processing logic here
     pass
 
-
-# user_permission_check = check_user_subscription("THE USER SUB")(pro_feature)
-
 def has_subscription(subscription):
   return lambda user: user["subscription"] in subscription
 
 @anvil.server.callable(require_user=has_subscription("Pro"))
 def only_if_pro():
   print("Only if you're pro")
-  
-# new_pro_feature = check_user_subscription("THE USER SUB")(pro_feature)
 
 @anvil.server.callable
 def process_payment(user_id, amount):
