@@ -22,11 +22,13 @@ components:
       layout_properties: {grid_position: 'YAAKTG,CLWBMD', full_width_row: true}
       components:
       - name: number_1_textbox
-        properties: {type: number, placeholder: '10', align: center, hide_text: false}
+        properties: {type: number, placeholder: '', align: center, hide_text: false,
+          text: '10'}
         type: TextBox
         layout_properties: {slot: number_1}
       - name: number_2_textbox
-        properties: {type: number, placeholder: '100', align: center, hide_text: false}
+        properties: {type: number, placeholder: '', align: center, hide_text: false,
+          text: '100'}
         type: TextBox
         layout_properties: {slot: number_2}
     - name: answer_rich_text
