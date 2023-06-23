@@ -13,6 +13,7 @@ def process_payment(user_id, amount):
     pass
 
 def has_subscription(subscription):
+  # return lambda user: True if user["subscription"] in subscription else "User needs to upgrade."
   return lambda user: user["subscription"] in subscription
 
 @anvil.server.callable(require_user=has_subscription("Pro"))
