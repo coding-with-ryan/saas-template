@@ -7,8 +7,6 @@ import anvil.server
 from .Subscriptions import has_subscription
 
 @anvil.server.callable(require_user=has_subscription(["Personal", "Pro"]))
-def calculate_percentage_of():
-    percentage = (self.number_1_textbox.text / self.number_2_textbox.text) * 100
-    self.percentage_label.text, self.original_number_1.text, self.original_number_2.text = str(percentage) + "%", self.number_1_textbox.text, self.number_2_textbox.text
-    self.answer_rich_text.visible = True
+def calculate_percentage_of(number, total_number):
+    percentage = (number / total_number) * 100
     return percentage

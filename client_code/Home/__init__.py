@@ -16,7 +16,9 @@ class Home(HomeTemplate):
   def calculate_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.number_1_textbox.text and self.number_2_textbox.text:
-      anvil.server.call('calculate_percentage_of')
+      anvil.server.call('calculate_percentage_of', self.number_1_textbox.text, self.number_2_textbox.text)
+      self.original_number_1.text, self.percentage_label.text, self.original_number_2.text = self.number_1_textbox.text, str(percentage) + "%", self.number_2_textbox.text
+      self.answer_rich_text.visible = True
     else:
       Notification("Please enter two numbers.")
     
