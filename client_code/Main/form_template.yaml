@@ -8,6 +8,10 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components: []
+- name: column_panel_2
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: default}
 - type: FlowPanel
   properties: {}
   name: navbar_links
@@ -42,8 +46,3 @@ components:
       layout_properties: {}
       event_bindings: {click: sign_out_button_click}
     layout_properties: {}
-- name: logo
-  properties: {source: _/theme/percentage-of-high-resolution-logo-color-on-transparent-background.png,
-    height: 228}
-  type: Image
-  layout_properties: {slot: title}
