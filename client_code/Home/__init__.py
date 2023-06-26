@@ -6,6 +6,8 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 
+
+
 class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -26,7 +28,6 @@ class Home(HomeTemplate):
   #       Notification("Please login").show()
   #   else:
   #     Notification("Please enter two numbers.")
-
   def calculate_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.number_1_textbox.text and self.number_2_textbox.text:
