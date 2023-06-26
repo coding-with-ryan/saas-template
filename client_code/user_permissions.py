@@ -6,6 +6,7 @@ from anvil.tables import app_tables
 from anvil import Notification
 
 
+
 def check_permissions(func):
   def wrapper(self, *args, **kargs):
     try:

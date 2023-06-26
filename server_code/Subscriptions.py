@@ -4,8 +4,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 
-from functools import partial
-
 @anvil.server.callable
 def process_payment(user_id, amount):
     # Process a payment for a user
