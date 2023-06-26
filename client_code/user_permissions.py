@@ -6,8 +6,8 @@ from anvil.tables import app_tables
 from anvil import Notification
 
 
-
-def check_permissions(func):
+# A decorator function to display notifications that encourage people to upgrade
+def catch_permission_errors(func):
   def wrapper(self, *args, **kargs):
     try:
       func(self)

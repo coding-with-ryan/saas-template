@@ -62,10 +62,6 @@ class Main(MainTemplate):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    anvil.server.call('only_if_pro')
-
 
 
 

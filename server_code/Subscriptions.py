@@ -4,15 +4,22 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 
+from datetime import datetime
+
+# The has_subscription takes a list object and checks whether the user's subscription is valid for the decorated function
+# See Utils to see it in use
+def has_subscription(subscription):
+  return lambda user: user["subscription"] in subscription
+
+
+# Here are some example of functions you may need if you are using your own payment workflow
+# Anvil comes with send http request with either the Python requests module or Anvil's http module:
+# https://anvil.works/docs/http-apis/making-http-requests
 @anvil.server.callable
 def process_payment(user_id, amount):
     # Process a payment for a user
     # Implement your payment processing logic here
     pass
-
-def has_subscription(subscription):
-  # return lambda user: True if user["subscription"] in subscription else "User needs to upgrade."
-  return lambda user: user["subscription"] in subscription
 
 @anvil.server.callable
 def process_payment(user_id, amount):
@@ -23,15 +30,13 @@ def process_payment(user_id, amount):
     # Example: Check if the payment is successful and update the user's subscription status
     if payment_successful(user_id, amount):
         user['is_subscribed'] = True
-        user['last_payment_date'] = anvil.server.now_utc()
+        user['last_payment_date'] = datetime.now()
         user['subscription_status'] = 'Active'
         user['subscription_amount'] = amount
         user.save()
         return True
     else:
         return False
-
-# Additional server-side functions for your SaaS product
 
 def payment_successful(user_id, amount):
     # Simulate a successful payment for demonstration purposes

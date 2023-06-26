@@ -6,7 +6,7 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 
-from ..user_permissions import check_permissions
+from ..user_permissions import catch_permission_errors
 
 
 
@@ -17,8 +17,9 @@ class Home(HomeTemplate):
 
     # Any code you write here will run before the form opens.
 
-  
-  @check_permissions
+  # Catch_permission_errors catches excpetions that are thrown by a user not being subscribed and gives them a notification to upgrade
+  @catch_permission_errors
+  # This function is a simple example function to show you functionality that is gated behind a paywall
   def calculate_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.number_1_textbox.text and self.number_2_textbox.text:
