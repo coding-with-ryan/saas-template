@@ -6,6 +6,8 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 
+from ..user_permissions import check_permissions
+
 
 
 class Home(HomeTemplate):
@@ -28,10 +30,11 @@ class Home(HomeTemplate):
   #       Notification("Please login").show()
   #   else:
   #     Notification("Please enter two numbers.")
+
+  @check_permissions
   def calculate_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.number_1_textbox.text and self.number_2_textbox.text:
-      
       percentage = anvil.server.call('calculate_percentage_of', self.number_1_textbox.text, self.number_2_textbox.text)
       self.original_number_1.text, self.percentage_label.text, self.original_number_2.text = self.number_1_textbox.text, str(percentage) + "%", self.number_2_textbox.text
       self.answer_rich_text.visible = True

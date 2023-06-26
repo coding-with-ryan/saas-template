@@ -16,10 +16,6 @@ def has_subscription(subscription):
   # return lambda user: True if user["subscription"] in subscription else "User needs to upgrade."
   return lambda user: user["subscription"] in subscription
 
-@anvil.server.callable(require_user=has_subscription("Pro"))
-def only_if_pro():
-  print("Only if you're pro")
-
 @anvil.server.callable
 def process_payment(user_id, amount):
     # Process a payment for a user and update their subscription status
