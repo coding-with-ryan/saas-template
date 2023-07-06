@@ -13,36 +13,31 @@ components:
   type: ColumnPanel
   layout_properties: {slot: default}
 - type: FlowPanel
-  properties: {}
+  properties: {align: justify, spacing: none}
   name: navbar_links
   layout_properties: {slot: nav-right}
   components:
-  - name: navbar_links_copy_1
-    properties: {align: center}
-    type: FlowPanel
-    components:
-    - name: pricing_button
-      properties: {text: Pricing, role: outlined-button}
-      type: Button
-      layout_properties: {}
-      event_bindings: {click: pricing_button_click}
-    - name: login_button
-      properties: {text: Log in, role: outlined-button}
-      type: Button
-      layout_properties: {}
-      event_bindings: {click: login_button_click}
-    - name: create_account_button
-      properties: {text: Create an account, role: outlined-button}
-      type: Button
-      layout_properties: {}
-      event_bindings: {click: create_account_button_click}
-    - name: upgrade_button
-      properties: {role: outlined-button, text: Upgrade}
-      type: Button
-      event_bindings: {click: upgrade_button_click}
-    - name: sign_out_button
-      properties: {role: outlined-button, text: Sign out}
-      type: Button
-      layout_properties: {}
-      event_bindings: {click: sign_out_button_click}
+  - name: pricing_button
+    properties: {text: Pricing, role: ''}
+    type: Button
     layout_properties: {}
+    event_bindings: {click: pricing_button_click}
+  - name: upgrade_button
+    properties: {role: '', text: Upgrade}
+    type: Button
+    event_bindings: {click: upgrade_button_click}
+    layout_properties: {}
+  - name: create_account_button
+    properties: {text: Create an account, role: '', icon: ''}
+    type: Button
+    layout_properties: {}
+    event_bindings: {click: create_account_button_click}
+  - name: sign_out_button
+    properties: {role: tonal-button, text: Sign out, icon: 'fa:sign-out'}
+    type: Button
+    event_bindings: {click: sign_out_button_click}
+  - name: login_button
+    properties: {text: Log in, role: tonal-button, icon: 'fa:sign-in', background: ''}
+    type: Button
+    layout_properties: {}
+    event_bindings: {click: login_button_click}
