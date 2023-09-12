@@ -16,3 +16,10 @@ def catch_permission_errors(func):
     except anvil.users.AuthenticationFailed:
       Notification("Please log in to use this functionality.", title="Please log in", timeout=3).show()
   return wrapper
+
+def login(self):
+  user = anvil.users.login_with_form()
+  if user["subscription"] = "trial":
+    pass
+  
+  
