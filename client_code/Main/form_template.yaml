@@ -18,7 +18,7 @@ components:
   layout_properties: {slot: nav-right}
   components:
   - name: pricing_button
-    properties: {text: Pricing, role: ''}
+    properties: {text: Pricing, role: null}
     type: Button
     layout_properties: {}
     event_bindings: {click: pricing_button_click}
