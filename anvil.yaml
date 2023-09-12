@@ -13,10 +13,9 @@ allow_embedding: false
 name: SaaS Template 2
 runtime_options: {version: 3, client_version: '3', server_version: python3-full, server_spec: null}
 startup_form: null
-native_deps: {head_html: "\n<script type=\"module\">\n    window.anvilEnableLegacyClassNames();\n\
-    </script>\n<style>\n  @import url({{cdn-origin}}/runtime/css/bootstrap.css) layer(bootstrap);\n\
-    \  @import url({{cdn-origin}}/runtime/css/bootstrap-theme.min.css) layer(bootstrap);\n\
-    </style>\n"}
+native_deps: {head_html: "<!-- Anvil Generated Migration Script -->\n<script type=\"\
+    module\">\n    window.anvil.enableLegacy({\n        bootstrap3: true,\n      \
+    \  classNames: true,\n        __dict__: true,\n    });\n</script>\n"}
 db_schema:
   users:
     client: none
