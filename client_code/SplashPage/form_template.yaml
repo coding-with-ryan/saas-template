@@ -3,7 +3,7 @@ container:
   properties: {html: <div anvil-slot="default"></div>}
 components:
 - name: column_panel_1
-  properties: {col_widths: '{"ODIPQA":15,"ELPSDO":35,"OGVDPR":10}'}
+  properties: {col_widths: '{"ODIPQA":10,"ELPSDO":40,"OGVDPR":10}'}
   type: ColumnPanel
   layout_properties: {slot: default}
   components:
