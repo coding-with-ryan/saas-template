@@ -6,7 +6,7 @@ components:
   layout_properties: {grid_position: 'VVUZGK,KDMOFP', full_width_row: true}
   components:
   - name: outlined_card_1
-    properties: {role: outlined-card, col_widths: '{}'}
+    properties: {role: tonal-card, col_widths: '{}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'BTRARL,TUYLXQ'}
     components:
@@ -23,12 +23,12 @@ components:
       components:
       - name: number_1_textbox
         properties: {type: number, placeholder: '', align: center, hide_text: false,
-          text: '10'}
+          text: '10', role: outlined}
         type: TextBox
         layout_properties: {slot: number_1}
       - name: number_2_textbox
         properties: {type: number, placeholder: '', align: center, hide_text: false,
-          text: '100'}
+          text: '100', role: outlined}
         type: TextBox
         layout_properties: {slot: number_2}
     - name: answer_rich_text

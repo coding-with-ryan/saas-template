@@ -103,11 +103,13 @@ body {
   line-height: 1.4286;
   color: %color:On Surface%;
   background-color: %color:Background%;
-  min-height: calc(100vh - 56px)
+  min-height: calc(100vh - 56px);
 
   background-image: url("_/theme/background-img.png");
   background-repeat: no-repeat;
 }
+
+
 
 @media print {
   body {
