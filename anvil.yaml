@@ -7,7 +7,7 @@ services:
   client_config: {allow_signup: true, enable_automatically: true, use_email: true,
     confirm_email: true}
   server_config: {user_table: users}
-startup: {type: form, module: Main}
+startup: {type: form, module: SplashPage}
 package_name: SaaS_Template_2
 allow_embedding: false
 name: SaaS Template 2

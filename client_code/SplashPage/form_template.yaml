@@ -1,0 +1,41 @@
+container:
+  type: HtmlTemplate
+  properties: {html: <div anvil-slot="default"></div>}
+components:
+- name: column_panel_1
+  properties: {col_widths: '{"ODIPQA":15,"ELPSDO":35,"OGVDPR":10}'}
+  type: ColumnPanel
+  layout_properties: {slot: default}
+  components:
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'IPDJEA,ODIPQA'}
+  - name: outlined_card_1
+    properties: {role: outlined-card, col_spacing: medium}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'IPDJEA,ELPSDO'}
+    components:
+    - name: logo
+      properties: {visible: true, source: _/theme/percentage-of-high-resolution-logo-color-on-transparent-background.png,
+        height: 308}
+      type: Image
+      layout_properties: {grid_position: 'LFVVWW,KBECRO'}
+      data_bindings: []
+    - name: title
+      properties: {text: Unlock Percentage Magic Today!, align: center, bold: false,
+        role: title, spacing_above: large, spacing_below: large, foreground: 'theme:Secondary',
+        font_size: 28}
+      type: Label
+      layout_properties: {grid_position: 'FUMSQT,OVHWPZ'}
+    - name: login_button
+      properties: {role: filled-button, text: Login, font_size: 30, spacing_above: large,
+        icon_align: right, spacing_below: large, bold: false, underline: false, icon: ''}
+      type: Button
+      layout_properties: {grid_position: 'ENWHOG,WQKXEU'}
+      event_bindings: {click: login_button_click}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'IPDJEA,OGVDPR'}
+is_package: true
