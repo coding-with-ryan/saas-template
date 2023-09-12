@@ -104,6 +104,9 @@ body {
   color: %color:On Surface%;
   background-color: %color:Background%;
   min-height: calc(100vh - 56px)
+
+  background-image: url("_/theme/background-image.png")
+  background-repeat: no-repeat
 }
 
 @media print {
