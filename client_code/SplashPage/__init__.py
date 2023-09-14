@@ -17,7 +17,7 @@ class SplashPage(SplashPageTemplate):
 
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    login()
+    user = login()
     if user:
       open_form('Main')
       
