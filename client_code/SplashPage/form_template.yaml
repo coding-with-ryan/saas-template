@@ -7,6 +7,10 @@ components:
   type: ColumnPanel
   layout_properties: {slot: default}
   components:
+  - name: spacer_3
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'DLQMFA,HOVZYD'}
   - name: spacer_2
     properties: {height: 32}
     type: Spacer
@@ -16,16 +20,10 @@ components:
     type: ColumnPanel
     layout_properties: {grid_position: 'IPDJEA,ELPSDO'}
     components:
-    - name: logo
-      properties: {visible: true, source: _/theme/percentage-of-high-resolution-logo-color-on-transparent-background.png,
-        height: 308}
-      type: Image
-      layout_properties: {grid_position: 'LFVVWW,KBECRO'}
-      data_bindings: []
     - name: title
-      properties: {text: Unlock Percentage Magic Today!, align: center, bold: false,
-        role: title, spacing_above: large, spacing_below: large, foreground: 'theme:Secondary',
-        font_size: 28}
+      properties: {role: title, align: center, foreground: 'theme:Secondary', visible: true,
+        text: Unlock Percentage Magic Today!, font_size: 28, spacing_above: large,
+        spacing_below: large, bold: false}
       type: Label
       layout_properties: {grid_position: 'FUMSQT,OVHWPZ'}
     - name: login_button
