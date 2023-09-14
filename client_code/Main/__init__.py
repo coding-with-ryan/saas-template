@@ -21,8 +21,8 @@ class Main(MainTemplate):
     """This method is called when the button is clicked"""
     user = anvil.users.login_with_form(allow_cancel=True)
     user["subscription"] = "Trial"
+    print(user["subscription"])
     self.check_login_buttons()
-      
 
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
