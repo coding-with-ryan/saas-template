@@ -19,7 +19,8 @@ def catch_permission_errors(func):
 
 def login(self):
   user = anvil.users.login_with_form()
-  if user["subscription"] = "trial":
+  if user["subscription"] == "trial":
+    Notification("You get one free use to try our calculator as part of your trial.", title="Trial")
     pass
   
   

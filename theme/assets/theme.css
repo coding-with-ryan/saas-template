@@ -107,6 +107,7 @@ body {
 
   background-image: url("_/theme/background-img.png");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 

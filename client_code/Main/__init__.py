@@ -20,6 +20,7 @@ class Main(MainTemplate):
   def create_account_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     user = anvil.users.login_with_form(allow_cancel=True)
+    user["subscription"] = "Trial"
     self.check_login_buttons()
       
 
