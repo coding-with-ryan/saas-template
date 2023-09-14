@@ -17,10 +17,14 @@ def catch_permission_errors(func):
       Notification("Please log in to use this functionality.", title="Please log in", timeout=3).show()
   return wrapper
 
-def login(self):
-  user = anvil.users.login_with_form()
-  if user["subscription"] == "trial":
-    Notification("You get one free use to try our calculator as part of your trial.", title="Trial")
-    pass
+def login():
+  user = anvil.users.login_with_form(allow_cancel=True, allow_remembered=True, show_signup_option=True)
+  if user["subscription"] == "":
+    user["subscription"] = "Trial" 
+    Notification("You have one free use to try our calculator as part of your trial.", title="Trial")
+  elif user["subscription"] == "Trial":
+    Notification("You have one free use to try our calculator as part of your trial.", title="Trial")
+  return user
+
   
   

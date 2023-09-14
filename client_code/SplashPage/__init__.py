@@ -6,6 +6,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from ..user_permissions import login
+
 class SplashPage(SplashPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -15,7 +17,7 @@ class SplashPage(SplashPageTemplate):
 
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    user = anvil.users.login_with_form()
+    login()
     if user:
       open_form('Main')
       
