@@ -2,9 +2,9 @@ container:
   type: HtmlTemplate
   properties: {html: '<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 
-      <stripe-pricing-table pricing-table-id="prctbl_1NLjp1LfxhObmm8s7C8MthXQ"
+      <stripe-pricing-table pricing-table-id="prctbl_1Ns3EgAp4vQdl4eplhda56tv"
 
-      publishable-key="pk_live_51Ley0BLfxhObmm8sWKRcuS3pbOjLIt5SFZfUKnIvBbEN2G56lQhaN58waLjFyL0bHBIvjUfrDdjNcrsCcPXFSn2w00CpQzWh5t">
+      publishable-key="pk_test_51Ns2yWAp4vQdl4epJQlckkxs3yufgTUc78712OztyDPl9ZLe8zINBcQzEuKfibOlpaaGxlwkostfBDTtf0KN5Ld900wAkOFhJK">
 
       </stripe-pricing-table>'}
 components: []
