@@ -57,3 +57,8 @@ def check_subscription_status(subscription_id):
 
     except stripe.error.StripeError as e:
         return str(e)
+
+@anvil.server.http_endpoint('/stripe/subscrription_change/list',  methods=["POST", "HEAD"])
+def register_subscription_change():
+  if anvil.server.request.method == "HEAD":
+    return {}
