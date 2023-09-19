@@ -16,6 +16,7 @@ class StripePricing(StripePricingTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    print(self.dom_nodes)
     
 
   def form_show(self, **event_args):
@@ -23,7 +24,7 @@ class StripePricing(StripePricingTemplate):
     import time
     time.sleep(3)
     user_id = anvil.users.get_user().get_id()
-    print(self.dom_nodes)
-    # self.dom_nodes["stripe-pricing-table"].setAttribute("client-reference-id", user_id)
+    # print(self.dom_nodes)
+    self.dom_nodes["stripe-pricing-table"].setAttribute("client-reference-id", user_id)
 
 
