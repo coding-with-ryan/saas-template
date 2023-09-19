@@ -7,5 +7,6 @@ container:
       publishable-key="pk_test_51Ns2yWAp4vQdl4epJQlckkxs3yufgTUc78712OztyDPl9ZLe8zINBcQzEuKfibOlpaaGxlwkostfBDTtf0KN5Ld900wAkOFhJK">
 
       </stripe-pricing-table>'}
+  event_bindings: {show: form_show}
 components: []
 is_package: true
