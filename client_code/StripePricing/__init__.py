@@ -16,15 +16,10 @@ class StripePricing(StripePricingTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    print(self.dom_nodes)
-    
-
-  def form_show(self, **event_args):
-    """This method is called when the HTML panel is shown on the screen"""
-    import time
-    time.sleep(3)
     user_id = anvil.users.get_user().get_id()
-    # print(self.dom_nodes)
+    # Reconstitute the user_id for the Stripe API to accept - see: https://stripe.com/docs/payments/checkout/pricing-table#track-subscriptions
+    # To reverse it "[" + user_id.replace("_", ",") + "]"
+    user_id = user_id[1:-1].replace(",", "_")
     self.dom_nodes["stripe-pricing-table"].setAttribute("client-reference-id", user_id)
 
 
