@@ -7,6 +7,7 @@ unique_ids:
   modules:
     user_permissions: '168753809331887088577210.01617'
   server_modules:
+    StripeFunctions: '1695125112801558673098133.3318'
     Subscriptions: '1687425144862586721439081.0061'
     Utils: '1687447710599178355651104.09866'
   assets:

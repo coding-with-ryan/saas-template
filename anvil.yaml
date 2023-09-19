@@ -7,6 +7,9 @@ services:
   client_config: {allow_signup: true, enable_automatically: true, use_email: true,
     confirm_email: true}
   server_config: {user_table: users}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
 startup: {type: form, module: SplashPage}
 package_name: SaaS_Template_2
 allow_embedding: false
@@ -49,5 +52,9 @@ db_schema:
       admin_ui: {width: 200}
       type: string
     title: Users
+secrets:
+  stripe_live_key:
+    value: {V6EQ5QAD7LZPUP6S: euIwRITBmyr/j3nta5H2f08wsQD6fOXWS2Vy5tud227Ai/HgJtQfn44MWRycykQOTn+2Cpsu6a72h2P0/cv5PVhoBk81nvyJhpvH9SldQ6s0EqP9G91DdE1Qk9ngLc/ACPPnuI9kLrDjd6WCMx0IBy5ChUl1w6ZigbmqtpmDOigPfhKbcpOmLeNbQB48A3ARgCf8+RIhhGj3mSjKu8X/ghHMCrC3ReRYrQOZVxatSZenjm9SXRjIWcP4wYzPquU55zXOefTpmW4+vQ==}
+    type: secret
 uplink_visible: true
 renamed: true
