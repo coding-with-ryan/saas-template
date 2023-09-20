@@ -60,8 +60,6 @@ def check_subscription_status(subscription_id):
 
 @anvil.server.http_endpoint('/stripe/stripe_checkout_completed',  enable_cors=True, cross_site_session=True)
 def stripe_checkout_completed():
-  if anvil.server.request.method == "HEAD":
-    return {}
 
   print(anvil.server.request.method)
   print("request: ", dir(anvil.server.request))
@@ -70,3 +68,5 @@ def stripe_checkout_completed():
   payload = anvil.server.request.body
   print(anvil.server.request.body_json)
   print(payload)
+
+  print(anvil.server.request)
