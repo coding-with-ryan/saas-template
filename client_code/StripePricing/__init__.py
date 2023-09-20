@@ -16,6 +16,8 @@ class StripePricing(StripePricingTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+    # Add user ID to subscription screen
     user_id = anvil.users.get_user().get_id()
     # Reconstitute the user_id for the Stripe API to accept - see: https://stripe.com/docs/payments/checkout/pricing-table#track-subscriptions
     # To reverse it "[" + user_id.replace("_", ",") + "]"

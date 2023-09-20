@@ -60,4 +60,5 @@ def check_subscription_status(subscription_id):
 
 @anvil.server.http_endpoint('/stripe/stripe_checkout_completed',  methods=["POST", "HEAD"])
 def stripe_checkout_completed():
-  print(anvil.server.request.body)
+  payload = anvil.server.request.body_json
+  print(payload)
