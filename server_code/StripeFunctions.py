@@ -6,6 +6,8 @@ from anvil.tables import app_tables
 import anvil.server
 
 import stripe
+import json
+
 
 # Initialize Stripe with your secret key
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
@@ -62,6 +64,7 @@ def check_subscription_status(subscription_id):
 def stripe_checkout_completed():
   print("Stripe checkout completed")
 
-  print(anvil.server.request, anvil.server.request.query_params, anvil.server.request.headers, anvil.server.request.body, anvil.server.request.body_json, sep="\n")
+  # print(anvil.server.request, anvil.server.request.query_params, anvil.server.request.headers, anvil.server.request.body.get_bytes(), anvil.server.request.body_json, sep="\n")
+  print(json.loads(anvil.server.request.body))
  
   payload = anvil.server.request.body
