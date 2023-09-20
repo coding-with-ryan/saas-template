@@ -8,7 +8,7 @@ import anvil.server
 import stripe
 
 # Initialize Stripe with your secret key
-stripe.api_key = anvil.secrets.get_secret('stripe_live_key')
+stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
 def create_subscription(customer_email, payment_method_id, plan_id):
     try:
@@ -60,5 +60,6 @@ def check_subscription_status(subscription_id):
 
 @anvil.server.http_endpoint('/stripe/stripe_checkout_completed',  methods=["POST", "HEAD"])
 def stripe_checkout_completed():
-  payload = anvil.server.request.body_json
+  print("Stripe checkout completed")
+  payload = anvil.server.request
   print(payload)
