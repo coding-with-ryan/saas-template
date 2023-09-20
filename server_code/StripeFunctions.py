@@ -58,11 +58,13 @@ def check_subscription_status(subscription_id):
     except stripe.error.StripeError as e:
         return str(e)
 
-@anvil.server.http_endpoint('/stripe/stripe_checkout_completed',  methods=["POST", "HEAD"])
+@anvil.server.http_endpoint('/stripe/stripe_checkout_completed',  enable_cors=True, cross_site_session=True)
 def stripe_checkout_completed():
-  print(anvil.server.request.method)
   if anvil.server.request.method == "HEAD":
     return {}
+
+  print(anvil.server.request.method)
+  print("request: ", dir(anvil.server.request))
     
   print("Stripe checkout completed")
   payload = anvil.server.request.body
