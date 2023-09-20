@@ -60,11 +60,22 @@ def check_subscription_status(subscription_id):
     except stripe.error.StripeError as e:
         return str(e)
 
-@anvil.server.http_endpoint('/stripe/stripe_checkout_completed',  enable_cors=True, cross_site_session=True)
+@anvil.server.http_endpoint('/stripe/stripe_checkout_completed')
 def stripe_checkout_completed():
-  print("Stripe checkout completed")
 
-  # print(anvil.server.request, anvil.server.request.query_params, anvil.server.request.headers, anvil.server.request.body.get_bytes(), anvil.server.request.body_json, sep="\n")
-  print(json.loads(anvil.server.request.body))
+  # This should work but there's a bug that Ian has fixed that I'm waiting to propogate on the Anvil servers
+  # payload_json = anvil.server.request.body_json
+  # We'll use this as a workaround for now:
+  payload_json = json.loads(anvil.server.request.body.get_bytes())
+  payload_data_json = payload_json.get("data").get("object")
+
+  # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
+  user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
+  print(user_row_id)
+
+  payment_status = payload_data_json.get("paymeny_status")
+  print(payment_status)
+  
+  return user_row_id, payment_status
  
-  payload = anvil.server.request.body
+  

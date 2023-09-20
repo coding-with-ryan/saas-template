@@ -18,7 +18,7 @@ runtime_options:
   version: 3
   client_version: '3'
   server_version: python3-full
-  server_spec: {base: python310-minimal}
+  server_spec: {base: python310-standard}
 startup_form: null
 native_deps: {head_html: "<!-- Anvil Generated Migration Script -->\n<script type=\"\
     module\">\n    window.anvil.enableLegacy({\n        bootstrap3: true,\n      \
