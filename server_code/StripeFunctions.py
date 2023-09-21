@@ -68,14 +68,15 @@ def stripe_checkout_completed():
   # We'll use this as a workaround for now:
   payload_json = json.loads(anvil.server.request.body.get_bytes())
   payload_data_json = payload_json.get("data").get("object")
-
-  # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
-  user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
-  print(user_row_id)
-
-  payment_status = payload_data_json.get("paymeny_status")
-  print(payment_status)
+  if payload_json.get("type") == "checkout.session.completed":
+    # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
+    user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
+    payment_status = payload_data_json.get("payment_status")
+    print(user_row_id, payment_status)
+  elif payload_json.get("type") == "payment_intent.created":
+    
+    
   
-  return user_row_id, payment_status
+
  
   
