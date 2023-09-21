@@ -12,44 +12,19 @@ import json
 # Initialize Stripe with your secret key
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
-def create_subscription(customer_email, payment_method_id, plan_id):
-    try:
-        # Create a customer
-        customer = stripe.Customer.create(
-            email=customer_email,
-            payment_method=payment_method_id,
-            invoice_settings={
-                'default_payment_method': payment_method_id
-            }
-        )
-
-        # Subscribe the customer to a plan
-        subscription = stripe.Subscription.create(
-            customer=customer.id,
-            items=[
-                {
-                    'price': plan_id,
-                },
-            ],
-        )
-
-        return subscription
-
-    except stripe.error.StripeError as e:
-        return str(e)
-
 def cancel_subscription(subscription_id):
-    try:
-        # Cancel the subscription
-        canceled_subscription = stripe.Subscription.update(
-            subscription_id,
-            cancel_at_period_end=True
-        )
+    pass
+    # try:
+    #     # Cancel the subscription
+    #     canceled_subscription = stripe.Subscription.update(
+    #         subscription_id,
+    #         cancel_at_period_end=True
+    #     )
 
-        return canceled_subscription
+    #     return canceled_subscription
 
-    except stripe.error.StripeError as e:
-        return str(e)
+    # except stripe.error.StripeError as e:
+    #     return str(e)
 
 def check_subscription_status(subscription_id):
     try:
@@ -119,11 +94,11 @@ def stripe_subscription_updated():
     # GOT TO FIND OUT WHICH USER TO UPDATE FROM THE EVENT DATA subscription.created or . updated -> customer -> customer.metadata.anvil_user_row_id -> (anvil) get_user -> updated subscription column
     event.get("type")
     user_row = app_tables.users.get_by_id(user_row_id)
-    # If Personal plan is selected Personal plan ID: price_1Ns3AAAp4vQdl4epHiqlYaIc
-    if price_id == "price_1Ns3AAAp4vQdl4epHiqlYaIc":
-      user_row["subscription"] = "Personal"
-    elif price_id == "price_1Ns3AbAp4vQdl4epxcEN5RUz":
-      user_row["subscription"] = "Pro"
+    stripe_customer_id = payload_json.get("object").get("id") or payload_json.get("object").get("customer")
+    if stripe_customer_id:
+    
+    else:
+      print("⚠️  No customer ID")
   else:
     # Unexpected event type
     print('Unhandled event type {}'.format(event['type']))
@@ -131,31 +106,10 @@ def stripe_subscription_updated():
   return jsonify(success=True)
 
 
-
-
-
-    
-    except ValueError as e:
-        # Invalid payload
-        raise e
-    except stripe.error.SignatureVerificationError as e:
-        # Invalid signature
-        raise e
-
-    # Handle the event
-    if event['type'] == 'customer.subscription.created':
-      subscription = event['data']['object']
-    elif event['type'] == 'customer.subscription.updated':
-      subscription = event['data']['object']
-    # ... handle other event types
-    else:
-      print('Unhandled event type {}'.format(event['type']))
-
-    return jsonify(success=True)
-
-    
-    
-  
-
- 
-  
+# # If Personal plan is selected Personal plan ID: price_1Ns3AAAp4vQdl4epHiqlYaIc
+# if price_id == "price_1Ns3AAAp4vQdl4epHiqlYaIc":
+#   user_row["subscription"] = "Personal"
+#   print("User row subscription: ", user_row['subscription'])
+# elif price_id == "price_1Ns3AbAp4vQdl4epxcEN5RUz":
+#   user_row["subscription"] = "Pro"
+#   print("User row subscription: ", user_row['subscription'])
