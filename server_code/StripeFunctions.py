@@ -75,22 +75,84 @@ def stripe_checkout_completed():
     print(user_row_id, payment_status)
   elif payload_json.get("type") == "payment_intent.created":
     pass 
-  elif payload_json.get("type") == "customer.subscription.created" or "customer.subscription.updated":
-    price_id = payload_json.get("object").get("items").get("data")[0].get("price").get("id")
+
+@anvil.server.http_endpoint('/stripe/stripe_customer_created')
+def stripe_customer_created():
+  payload_json = json.loads(anvil.server.request.body.get_bytes())
+  stripe_customer_id = payload_json.get("object").get("id")
+  user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
+  stripe.Customer.modify(
+    stripe_customer_id,
+    metadata={"anvil_user_row_id": user_row_id},
+  )
+
+@anvil.server.http_endpoint('/stripe/stripe_scubscription_updated')
+def stripe_subscription_updated():
+  event = None
+  payload = anvil.server.request.body
+  payload_json = anvil.server.request.body_json
+  sig_header = request.headers["STRIPE_SIGNATURE"]
+  endpoint_secret = "we_1NsnudAp4vQdl4epdWPQpKUL"
+
+  price_id = payload_json.get("object").get("items").get("data")[0].get("price").get("id")
+  
+  
+  try:
+    event = json.loads(anvil.server.request.body.get_bytes())
+  except:
+      print("⚠️  Webhook error while parsing basic request." + str(e))
+      return jsonify(success=False)
+  if endpoint_secret:
+    # Only verify the event if there is an endpoint secret defined
+    # Otherwise use the basic event deserialized with json
+    sig_header = request.headers.get("stripe-signature")
+    try:
+      event = stripe.Webhook.construct_event(
+          payload, sig_header, endpoint_secret
+      )
+    except stripe.error.SignatureVerificationError as e:
+      print("⚠️  Webhook signature verification failed" + str(e))
+      return jsonify(success=False)
+
+  # Handle the event
+  if event and (event.get("type") == "customer.subscription.created" or event.get("type") == "customer.subscription.updated"):
+    # GOT TO FIND OUT WHICH USER TO UPDATE FROM THE EVENT DATA subscription.created or . updated -> customer -> customer.metadata.anvil_user_row_id -> (anvil) get_user -> updated subscription column
+    event.get("type")
     user_row = app_tables.users.get_by_id(user_row_id)
     # If Personal plan is selected Personal plan ID: price_1Ns3AAAp4vQdl4epHiqlYaIc
     if price_id == "price_1Ns3AAAp4vQdl4epHiqlYaIc":
       user_row["subscription"] = "Personal"
     elif price_id == "price_1Ns3AbAp4vQdl4epxcEN5RUz":
       user_row["subscription"] = "Pro"
+  else:
+    # Unexpected event type
+    print('Unhandled event type {}'.format(event['type']))
+
+  return jsonify(success=True)
 
 
-@anvil.server.http_endpoint('/stripe/stripe_customer_created')
-def stripe_checkout_completed():
-  payload_json = json.loads(anvil.server.request.body.get_bytes())
-  payload_json.get("object").get("email")
+
+
+
     
-    
+    except ValueError as e:
+        # Invalid payload
+        raise e
+    except stripe.error.SignatureVerificationError as e:
+        # Invalid signature
+        raise e
+
+    # Handle the event
+    if event['type'] == 'customer.subscription.created':
+      subscription = event['data']['object']
+    elif event['type'] == 'customer.subscription.updated':
+      subscription = event['data']['object']
+    # ... handle other event types
+    else:
+      print('Unhandled event type {}'.format(event['type']))
+
+    return jsonify(success=True)
+
     
     
   
