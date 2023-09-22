@@ -12,34 +12,6 @@ import json
 # Initialize Stripe with your secret key
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
-def cancel_subscription(subscription_id):
-    pass
-
-def check_subscription_status(subscription_id):
-    try:
-        # Retrieve the subscription
-        subscription = stripe.Subscription.retrieve(subscription_id)
-        return subscription.status
-
-    except stripe.error.StripeError as e:
-        return str(e)
-
-@anvil.server.http_endpoint('/stripe/stripe_checkout_completed')
-def stripe_checkout_completed():
-  # This should work but there's a bug that Ian has fixed that I'm waiting to propogate on the Anvil servers
-  # payload_json = anvil.server.request.body_json
-  # We'll use this as a workaround for now:
-  payload_json = json.loads(anvil.server.request.body.get_bytes())
-  payload_data_json = payload_json.get("data").get("object")
-  if payload_json.get("type") == "checkout.session.completed":
-    # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
-    user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
-    user_row = app_tables.users.get_by_id(user_row_id)
-    payment_status = payload_data_json.get("payment_status")
-    print(user_row_id, payment_status)
-  elif payload_json.get("type") == "payment_intent.created":
-    pass 
-
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
   # Get the Stripe Customer ID
@@ -61,8 +33,20 @@ def stripe_customer_created():
   # Update the user record in the Anvil app to include the Stripe Customer ID
   user_row.update(stripe_id=stripe_customer_id)
 
+
+
+
+
 @anvil.server.http_endpoint('/stripe/stripe_subscription_updated')
 def stripe_subscription_updated():
+  # Determine whether it is 
+
+
+
+
+
+
+  
   event = None
   payload = anvil.server.request.body
   payload_json = anvil.server.request.body_json
@@ -113,3 +97,44 @@ def stripe_subscription_updated():
 # elif price_id == "price_1Ns3AbAp4vQdl4epxcEN5RUz":
 #   user_row["subscription"] = "Pro"
 #   print("User row subscription: ", user_row['subscription'])
+
+
+
+
+
+
+
+
+
+
+
+###############
+##############
+##############
+def cancel_subscription(subscription_id):
+    pass
+
+def check_subscription_status(subscription_id):
+    try:
+        # Retrieve the subscription
+        subscription = stripe.Subscription.retrieve(subscription_id)
+        return subscription.status
+
+    except stripe.error.StripeError as e:
+        return str(e)
+
+@anvil.server.http_endpoint('/stripe/stripe_checkout_completed')
+def stripe_checkout_completed():
+  # This should work but there's a bug that Ian has fixed that I'm waiting to propogate on the Anvil servers
+  # payload_json = anvil.server.request.body_json
+  # We'll use this as a workaround for now:
+  payload_json = json.loads(anvil.server.request.body.get_bytes())
+  payload_data_json = payload_json.get("data").get("object")
+  if payload_json.get("type") == "checkout.session.completed":
+    # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
+    user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
+    user_row = app_tables.users.get_by_id(user_row_id)
+    payment_status = payload_data_json.get("payment_status")
+    print(user_row_id, payment_status)
+  elif payload_json.get("type") == "payment_intent.created":
+    pass 
