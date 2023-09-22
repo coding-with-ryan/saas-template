@@ -14,17 +14,6 @@ stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
 def cancel_subscription(subscription_id):
     pass
-    # try:
-    #     # Cancel the subscription
-    #     canceled_subscription = stripe.Subscription.update(
-    #         subscription_id,
-    #         cancel_at_period_end=True
-    #     )
-
-    #     return canceled_subscription
-
-    # except stripe.error.StripeError as e:
-    #     return str(e)
 
 def check_subscription_status(subscription_id):
     try:
@@ -53,7 +42,10 @@ def stripe_checkout_completed():
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
+  print("stripe customer created")
+  print(type(anvil.server.request.body))
   payload_json = json.loads(anvil.server.request.body.get_bytes())
+  print(payload_json)
   stripe_customer_id = payload_json.get("object").get("id")
   user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
   stripe.Customer.modify(
@@ -61,7 +53,7 @@ def stripe_customer_created():
     metadata={"anvil_user_row_id": user_row_id},
   )
 
-@anvil.server.http_endpoint('/stripe/stripe_scubscription_updated')
+@anvil.server.http_endpoint('/stripe/stripe_subscription_updated')
 def stripe_subscription_updated():
   event = None
   payload = anvil.server.request.body
@@ -96,7 +88,7 @@ def stripe_subscription_updated():
     user_row = app_tables.users.get_by_id(user_row_id)
     stripe_customer_id = payload_json.get("object").get("id") or payload_json.get("object").get("customer")
     if stripe_customer_id:
-    
+      app_tables.users.get_by_id()
     else:
       print("⚠️  No customer ID")
   else:

@@ -5,7 +5,7 @@ services:
   server_config: {}
 - source: /runtime/services/anvil/users.yml
   client_config: {allow_signup: true, enable_automatically: true, use_email: true,
-    confirm_email: true}
+    confirm_email: false}
   server_config: {user_table: users}
 - source: /runtime/services/anvil/secrets.yml
   client_config: {}
@@ -54,6 +54,9 @@ db_schema:
       type: datetime
     - name: subscription
       admin_ui: {width: 200}
+      type: string
+    - name: stripe_id
+      admin_ui: {width: 200, order: 9}
       type: string
     title: Users
 secrets:
