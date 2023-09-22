@@ -61,7 +61,7 @@ db_schema:
     title: Users
 secrets:
   stripe_test_api_key:
-    value: {V6EQ5QAD7LZPUP6S: sDw70l8m0S0JlrBBlrfNQG86KBhIvgGYuhdcqfyTkF7zbldgucBWRl+MRA9ZdVMRPATwW7JWjM4oAqIhmoGK6NFCIePEp4wR9P0c3fdj53DRYBsun4YQh1SrQ8jrWMGwd8zHNJVB+EuNSNEpgeVmaVRjIDRjfxwlD1WLRjT1hroS/3LpH5mRrwtkh0vPhSUZu3Ed8lhj97Yb4yyIxLbKkbyjk5PpFkkpW4/hkfIlfuNqOgy7ImH6LsBlYs9ueVBSFjQVp2Xm4i8zxw==}
+    value: {V6EQ5QAD7LZPUP6S: dptrpSax1W+VSeeAlowM4XVeTZBfbzf+XF9HXXRU1HvjEVw97HmDbHUC3c7iOcjg95olVCLsqHFYODdVwSNWG4qpWOvXWRcYOoRdS3KAEuysMVyVHJAzaL42Y9jqB36s8BHPnCwYOZLsqhCrkAo7G8eKwwLAys0VuReh7kQI1b5++6as6Qi3Lorvh//y0Ynhw4lSewXjgMVMjHZNVnvtIRc68xBn+MUdpR/+mtyEvkdfreTQZW4kcSkCHvOUBUN+Mw8CdIKdQVqnYQ==}
     type: secret
 uplink_visible: true
 renamed: true

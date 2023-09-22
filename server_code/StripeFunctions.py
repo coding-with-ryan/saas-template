@@ -42,16 +42,24 @@ def stripe_checkout_completed():
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
-  print("stripe customer created")
-  print(type(anvil.server.request.body))
+  # Get the Stripe Customer ID
   payload_json = json.loads(anvil.server.request.body.get_bytes())
-  print(payload_json)
-  stripe_customer_id = payload_json.get("object").get("id")
-  user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
+  stripe_customer_id = payload_json.get("data").get("object").get("id")
+
+  # Get the Anvil user's row ID and transform it to work with Stripes API
+  stripe_customer_email = payload_json.get("data").get("object").get("email")
+  user_row = app_tables.users.get(email=stripe_customer_email)
+  user_row_id = user_row.get_id()
+  transformed_user_row_id = user_row_id[1:-1].replace(",", "_")
+
+  # Update the customer record, so the row_id is always available
   stripe.Customer.modify(
     stripe_customer_id,
-    metadata={"anvil_user_row_id": user_row_id},
+    metadata={"anvil_user_row_id": transformed_user_row_id},
   )
+
+  # Update the user record in the Anvil app to include the Stripe Customer ID
+  user_row.update(stripe_id=stripe_customer_id)
 
 @anvil.server.http_endpoint('/stripe/stripe_subscription_updated')
 def stripe_subscription_updated():
