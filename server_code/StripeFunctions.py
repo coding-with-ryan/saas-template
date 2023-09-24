@@ -39,7 +39,7 @@ def stripe_customer_created():
 
 @anvil.server.http_endpoint('/stripe/stripe_subscription_updated')
 def stripe_subscription_updated():
-  # Determine whether it is 
+  # Determine whether it is "customer.subscription.updated" or "customer.subscription.created"
 
 
 

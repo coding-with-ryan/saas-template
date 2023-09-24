@@ -8,8 +8,6 @@ import anvil.server
 from ..Home import Home
 from ..StripePricing import StripePricing
 
-from ..user_permissions import login
-
 class Main(MainTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -21,14 +19,15 @@ class Main(MainTemplate):
 
   def create_account_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    user = login()
-    user["subscription"] = "Trial"
-    print(user["subscription"])
+    user = anvil.users.login_with_form(allow_cancel=True)
+    # if user["subscription"] == None:
+    #   user["subscription"] = "Trial"
+    #   Notification("You have one free use to try our calculator as part of your trial.", title="Trial")
     self.check_login_buttons()
 
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    login(allow_cancel=True)
+    anvil.users.login_with_form(allow_cancel=True, show_signup_option=False, allow_remembered=True)
     self.check_login_buttons()
 
   def sign_out_button_click(self, **event_args):

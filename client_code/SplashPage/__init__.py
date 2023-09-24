@@ -6,8 +6,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-from ..user_permissions import login
-
 class SplashPage(SplashPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -17,9 +15,12 @@ class SplashPage(SplashPageTemplate):
 
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    user = login()
+    user = anvil.users.login_with_form(allow_cancel=True, show_signup_option=True, allow_remembered=True)
     if user:
       open_form('Main')
+      # if user["subscription"] == None:
+      #   user["subscription"] = "Trial"
+      #   Notification("You have one free use to try our calculator as part of your trial.", title="Trial")
       
     
 
