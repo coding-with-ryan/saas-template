@@ -12,6 +12,8 @@ import json
 # Initialize Stripe with your secret key
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
+PRICES = {"price_1Ns3AAAp4vQdl4epHiqlYaIc" : "Personal", "price_1Ns3DHAp4vQdl4ep3xtVZZ54" : "Pro"}
+
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
   # Get the Stripe Customer ID
@@ -37,13 +39,23 @@ def stripe_customer_created():
 @anvil.server.http_endpoint('/stripe/stripe_subscription_updated')
 def stripe_subscription_updated():
   # Here we want to look for "customer.subscription.updated" because this event is what shows whether a subscription is valid or not. Events like "customer.subscription.created" are similar but are called before a charge is attempted and is usually followed by "customer.subscription.updated".
+  
+  # Need to get the users record from the DB based on the subscription objects "customer" field
   payload_json = json.loads(anvil.server.request.body.get_bytes())
   stripe_customer_id = payload_json.get("object").get("customer")
   user = app_tables.users.get(stripe_customer_id=stripe_customer_id)
-  # Need to get the users record from the DB based on the subscription objects "customer" field
-  # Need to check the subscription objects status: https://stripe.com/docs/api/subscriptions/object#subscription_object-status
+
+  # Check the subscription objects status: https://stripe.com/docs/api/subscriptions/object#subscription_object-status
+  subsctiption_status = payload_json.get("object").get("status")
   # If the subscription status is "Active"
-  ## Check the price/plan and update the user record in the DB accordingly
+  if subsctiption_status == "Active":
+    price_id_of_plan = payload_json.get("object").get("items").get("plan").get("id")
+    # Check the price/plan and update the user record in the DB accordingly
+    if price_id_of_plan == "price_1Ns3AAAp4vQdl4epHiqlYaIc":
+      user["subscription"] = "Personal"
+    elif price_id_of_plan == "price_1Ns3DHAp4vQdl4ep3xtVZZ54":
+      user["subscription"] = "Pro"
+  
   # Else
   ## Remove the subscription status from the user record in the DB
 
