@@ -1,3 +1,4 @@
+import anvil.email
 import anvil.secrets
 import anvil.users
 import anvil.tables as tables
@@ -69,20 +70,32 @@ def stripe_subscription_updated():
     elif price_id_of_plan == PRICES["pro"]:
       print(user)
       user["subscription"] = "pro"
+  elif subscription_status == "past_due":
+    anvil.email.send(from_name = "My SaaS app", 
+                 to = "",
+                 subject = "Subscription Past Due",
+                 text = f"""
+                 A user's subscription payment has failed.
+                 Email: {user["email"]}
+                 Stripe Customer ID: {stripe_customer_id}                 
+                 """")
+    user["subscription"] = "expired"
   else:
     user["subscription"] = "expired"
 
   anvil.server.HttpResponse(200)
 
-def check_subscription_status(subscription_id):
-    try:
-        # Retrieve the subscription
-        subscription = stripe.Subscription.retrieve(subscription_id)
-        return subscription.status
-
-    except stripe.error.StripeError as e:
-        return str(e)
-
+@anvil.server.callable(require_user=True)
+def cancel_subscription(subscription_id):
+  user = anvil.users.get_user()
+  stripe_customer_record = stripe.Customer.retrieve(user["stripe_id"])
+  # NEED TO WORK OUT HOW TO GET THE RIGHT SUBSCRIPTION FOR A USER
+  subscription = stripe.Subscription.search(
+    query="status:'active' AND metadata['order_id']:'6735'",
+  )
+  stripe.Subscription.delete(
+    "sub_1NuLKvAp4vQdl4ep7osgCJuP",
+  )
 
 
 
