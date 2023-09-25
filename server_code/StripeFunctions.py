@@ -74,7 +74,14 @@ def stripe_subscription_updated():
 
   anvil.server.HttpResponse(200)
 
+def check_subscription_status(subscription_id):
+    try:
+        # Retrieve the subscription
+        subscription = stripe.Subscription.retrieve(subscription_id)
+        return subscription.status
 
+    except stripe.error.StripeError as e:
+        return str(e)
 
 
 
@@ -90,14 +97,7 @@ def stripe_subscription_updated():
 def cancel_subscription(subscription_id):
     pass
 
-def check_subscription_status(subscription_id):
-    try:
-        # Retrieve the subscription
-        subscription = stripe.Subscription.retrieve(subscription_id)
-        return subscription.status
 
-    except stripe.error.StripeError as e:
-        return str(e)
 
 @anvil.server.http_endpoint('/stripe/stripe_checkout_completed')
 def stripe_checkout_completed():
