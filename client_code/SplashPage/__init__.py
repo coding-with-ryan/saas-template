@@ -27,6 +27,9 @@ class SplashPage(SplashPageTemplate):
     """This method is called when the HTML panel is shown on the screen"""
     if anvil.users.get_user():
       open_form('Main')
+    else:
+      # Stops the glitch in rendering components if we're only going to open the main form anyway
+      self.outlined_card_1.visible = True
 
       
     
