@@ -34,12 +34,12 @@ def stripe_customer_created():
   user_row.update(stripe_id=stripe_customer_id)
 
 
-
-
-
 @anvil.server.http_endpoint('/stripe/stripe_subscription_updated')
 def stripe_subscription_updated():
   # Here we want to look for "customer.subscription.updated" because this event is what shows whether a subscription is valid or not. Events like "customer.subscription.created" are similar but are called before a charge is attempted and is usually followed by "customer.subscription.updated".
+  payload_json = json.loads(anvil.server.request.body.get_bytes())
+  stripe_customer_id = payload_json.get("object").get("customer")
+  user = app_tables.users.get(stripe_customer_id=stripe_customer_id)
   # Need to get the users record from the DB based on the subscription objects "customer" field
   # Need to check the subscription objects status: https://stripe.com/docs/api/subscriptions/object#subscription_object-status
   # If the subscription status is "Active"
