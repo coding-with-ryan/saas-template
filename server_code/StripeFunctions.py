@@ -61,7 +61,9 @@ def stripe_subscription_updated():
   subscription_status = payload_json.get("data").get("object").get("status")
   # If the subscription status is "Active"
   print(subscription_status)
-  if subscription_status == "Active":
+  print(user)
+  if subscription_status == "active":
+    print("active")
     price_id_of_plan = payload_json.get("data").get("object").get("items").get("plan").get("id")
     # Check the price/plan and update the user record in the DB accordingly
     if price_id_of_plan == PRICES["Personal"]:
@@ -105,11 +107,8 @@ def stripe_checkout_completed():
   # We'll use this as a workaround for now:
   payload_json = json.loads(anvil.server.request.body.get_bytes())
   payload_data_json = payload_json.get("data").get("object")
-  if payload_json.get("type") == "checkout.session.completed":
-    # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
-    user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
-    user_row = app_tables.users.get_by_id(user_row_id)
-    payment_status = payload_data_json.get("payment_status")
-    print(user_row_id, payment_status)
-  elif payload_json.get("type") == "payment_intent.created":
-    pass 
+  
+  # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
+  user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
+  user_row = app_tables.users.get_by_id(user_row_id)
+  payment_status = payload_data_json.get("payment_status")
