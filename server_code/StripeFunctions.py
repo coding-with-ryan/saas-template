@@ -9,10 +9,11 @@ import stripe
 import json
 
 
-# Initialize Stripe with your secret key
+# Set your secret key. Remember to switch to your live secret key in production.
+# See your keys here: https://dashboard.stripe.com/apikeys
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
-PRICES = {"price_1Ns3AAAp4vQdl4epHiqlYaIc" : "Personal", "price_1Ns3DHAp4vQdl4ep3xtVZZ54" : "Pro"}
+PRICES = {"Personal" : "price_1Ns3AAAp4vQdl4epHiqlYaIc", "Pro" : "price_1Ns3DHAp4vQdl4ep3xtVZZ54"}
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
@@ -46,26 +47,18 @@ def stripe_subscription_updated():
   user = app_tables.users.get(stripe_customer_id=stripe_customer_id)
 
   # Check the subscription objects status: https://stripe.com/docs/api/subscriptions/object#subscription_object-status
-  subsctiption_status = payload_json.get("object").get("status")
+  subscription_status = payload_json.get("object").get("status")
   # If the subscription status is "Active"
-  if subsctiption_status == "Active":
+  if subscription_status == "Active":
     price_id_of_plan = payload_json.get("object").get("items").get("plan").get("id")
     # Check the price/plan and update the user record in the DB accordingly
-    if price_id_of_plan == "price_1Ns3AAAp4vQdl4epHiqlYaIc":
+    if price_id_of_plan == PRICES["Personal"]:
       user["subscription"] = "Personal"
-    elif price_id_of_plan == "price_1Ns3DHAp4vQdl4ep3xtVZZ54":
+    elif price_id_of_plan == PRICES["Pro"]:
       user["subscription"] = "Pro"
+  else:
+    user["subscription"] = "Expired"
   
-  # Else
-  ## Remove the subscription status from the user record in the DB
-
-  
-
-
-
-
-
-
   
   event = None
   payload = anvil.server.request.body
