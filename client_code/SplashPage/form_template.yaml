@@ -1,6 +1,7 @@
 container:
   type: HtmlTemplate
   properties: {html: <div anvil-slot="default"></div>}
+  event_bindings: {show: form_show}
 components:
 - name: column_panel_1
   properties: {col_widths: '{"ODIPQA":10,"ELPSDO":40,"OGVDPR":10}'}

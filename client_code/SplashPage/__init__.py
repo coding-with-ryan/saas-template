@@ -12,6 +12,7 @@ class SplashPage(SplashPageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    
 
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -21,6 +22,12 @@ class SplashPage(SplashPageTemplate):
       # if user["subscription"] == None:
       #   user["subscription"] = "Trial"
       #   Notification("You have one free use to try our calculator as part of your trial.", title="Trial")
+
+  def form_show(self, **event_args):
+    """This method is called when the HTML panel is shown on the screen"""
+    if anvil.users.get_user():
+      open_form('Main')
+
       
     
 
