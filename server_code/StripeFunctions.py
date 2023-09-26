@@ -78,7 +78,7 @@ def stripe_subscription_updated():
                  A user's subscription payment has failed.
                  Email: {user["email"]}
                  Stripe Customer ID: {stripe_customer_id}                 
-                 """"
+                 """
                  )
     user["subscription"] = "expired"
   else:
@@ -87,7 +87,7 @@ def stripe_subscription_updated():
   anvil.server.HttpResponse(200)
 
 @anvil.server.callable(require_user=True)
-def cancel_subscription(subscription_id):
+def cancel_subscription():
   user = anvil.users.get_user()
   stripe_customer_record = stripe.Customer.retrieve(
     user["stripe_id"],
