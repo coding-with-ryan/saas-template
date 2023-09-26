@@ -15,10 +15,11 @@ class DeleteAccountAlert(DeleteAccountAlertTemplate):
 
   def delete_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    return True
+    self.raise_event("x-close-alert", value=True) 
 
   def cancel_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    self.raise_event("x-close-alert", value=False) 
+    
 
 

@@ -7,6 +7,7 @@ import anvil.users
 import anvil.server
 
 from ..user_permissions import catch_permission_errors
+from ..DeleteAccountAlert import DeleteAccountAlert
 
 
 
@@ -35,8 +36,10 @@ class Home(HomeTemplate):
 
   def outlined_button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    alert(title="Delete Your Data", content="Are you want to delete your account, subscriptinon information and usage data from our systems? <b>This is irreversible.</b>")
-    # anvil.server.call('delete_user')
+    if alert(DeleteAccountAlert(), buttons=None, large=True):
+      anvil.server.call('delete_user')
+    else:
+      print("Deletion cancelled")
 
 
     
