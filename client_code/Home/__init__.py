@@ -28,6 +28,11 @@ class Home(HomeTemplate):
       self.answer_rich_text.visible = True
     else:
       Notification("Please enter two numbers.")
+
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('cancel_subscription')
+
     
     
     
