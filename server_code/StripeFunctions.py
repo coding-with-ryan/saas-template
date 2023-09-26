@@ -91,11 +91,11 @@ def cancel_subscription():
   user = anvil.users.get_user()
   stripe_customer_record = stripe.Customer.retrieve(
     user["stripe_id"],
-    expand=['customer', 'invoice.subscription']
+    expand=["subscriptions"]
   )
   # NEED TO WORK OUT HOW TO GET THE RIGHT SUBSCRIPTION FOR A USER
-  subscription = stripe_customer_record.get("invoice").get("subscription")
-  print(subscription)
+  subscription = stripe_customer_record.get("subscription").get("data")
+  # print(subscription)
   # stripe.Subscription.delete(
   #   "sub_1NuLKvAp4vQdl4ep7osgCJuP",
   # )
