@@ -55,7 +55,6 @@ def stripe_subscription_updated():
   
   # Need to get the users record from the DB based on the subscription objects "customer" field
   stripe_customer_id = payload_json.get("data").get("object").get("customer")
-  print(stripe_customer_id)
   user = app_tables.users.get(stripe_id=stripe_customer_id)
 
   # Check the subscription objects status: https://stripe.com/docs/api/subscriptions/object#subscription_object-status
@@ -65,10 +64,8 @@ def stripe_subscription_updated():
     price_id_of_plan = payload_json.get("data").get("object").get("items").get("data")[0].get("price").get("id")
     # Check the price/plan and update the user record in the DB accordingly
     if price_id_of_plan == PRICES["personal"]:
-      print(user)
       user["subscription"] = "personal"
     elif price_id_of_plan == PRICES["pro"]:
-      print(user)
       user["subscription"] = "pro"
   elif subscription_status == "past_due":
     anvil.email.send(from_name = "My SaaS app", 
