@@ -33,6 +33,12 @@ class Home(HomeTemplate):
     """This method is called when the button is clicked"""
     anvil.server.call('cancel_subscription')
 
+  def outlined_button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert(title="Delete Your Data", content="Are you want to delete your account, subscriptinon information and usage data from our systems? <b>This is irreversible.</b>")
+    # anvil.server.call('delete_user')
+
+
     
     
     

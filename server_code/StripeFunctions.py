@@ -91,9 +91,20 @@ def cancel_subscription():
     expand=["subscriptions"]
   )
   subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
-  stripe.Subscription.delete(
+
+  # Need to raise an exception here if the subscription isn't cancelled
+  stripe_subsription = stripe.Subscription.delete(
     subscription_id,
   )
+  
+
+@anvil.server.callable(require_user=True)
+def delete_user():
+  user = anvil.users.get_user()
+  # Need to raise an exception here if the subscription isn't deleted
+  stripe.Customer.delete(user["stripe_id"])
+  user.delete()
+  return "User deleted."
 
 
 

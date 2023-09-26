@@ -1,0 +1,27 @@
+container: {type: ColumnPanel}
+components:
+- name: label_1
+  properties: {text: Delete Your Data, bold: true, align: left, icon: '', role: headline}
+  type: Label
+  layout_properties: {grid_position: 'SONGCV,CUGCLH'}
+- name: rich_text_1
+  properties: {content: 'Are you want to delete your account, subscriptinon information
+      and usage data from our systems?
+
+      <br>
+
+      <span style="color:red;"><b>This is irreversible.</b></span>', format: restricted_html}
+  type: RichText
+  layout_properties: {grid_position: 'ZWIIIP,FERHGV'}
+- name: cancel_button
+  properties: {text: Cancel, role: outlined-button}
+  type: Button
+  layout_properties: {grid_position: 'JENPWS,GHWLWX'}
+  event_bindings: {click: cancel_button_click}
+- name: delete_button
+  properties: {text: 'Yes, delete my data.', role: filled-button}
+  type: Button
+  layout_properties: {grid_position: 'JENPWS,YYMVTB'}
+  event_bindings: {click: delete_button_click}
+is_package: true
+custom_component: true
