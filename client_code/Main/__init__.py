@@ -8,6 +8,8 @@ import anvil.server
 from ..Home import Home
 from ..StripePricing import StripePricing
 
+from ..AccountPage import AccountPage
+
 class Main(MainTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -63,6 +65,11 @@ class Main(MainTemplate):
   def upgrade_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
+
+  def account_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert(AccountPage(), title=anvil.users.get_user()["email"], dismissible=True, buttons=None)
+
 
 
 

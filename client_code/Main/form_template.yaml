@@ -41,3 +41,9 @@ components:
     type: Button
     layout_properties: {}
     event_bindings: {click: login_button_click}
+  - name: account_button
+    properties: {text: '', icon: 'fa:user', role: tonal-button, border: '', align: center,
+      icon_align: top}
+    type: Button
+    layout_properties: {expand: false, width: null}
+    event_bindings: {click: account_button_click}

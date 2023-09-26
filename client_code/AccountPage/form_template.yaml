@@ -1,0 +1,11 @@
+container: {type: ColumnPanel}
+components:
+- name: settings
+  properties: {text: Settings, role: null, icon: 'fa:sliders', icon_align: right}
+  type: Button
+  layout_properties: {grid_position: 'QODDSP,HFHIMB'}
+- name: logout
+  properties: {text: Log out, role: null, icon: 'fa:sign-out', icon_align: right}
+  type: Button
+  layout_properties: {grid_position: 'IVDJXM,EYYBOU'}
+is_package: true
