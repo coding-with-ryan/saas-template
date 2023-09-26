@@ -93,12 +93,10 @@ def cancel_subscription():
     user["stripe_id"],
     expand=["subscriptions"]
   )
-  # NEED TO WORK OUT HOW TO GET THE RIGHT SUBSCRIPTION FOR A USER
-  subscription = stripe_customer_record.get("subscription").get("data")
-  # print(subscription)
-  # stripe.Subscription.delete(
-  #   "sub_1NuLKvAp4vQdl4ep7osgCJuP",
-  # )
+  subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
+  stripe.Subscription.delete(
+    subscription_id,
+  )
 
 
 
