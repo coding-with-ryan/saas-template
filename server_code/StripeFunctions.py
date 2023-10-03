@@ -11,6 +11,7 @@ import json
 
 
 import time
+import datetime
 
 # Set your secret key. Remember to switch to your live secret key in production.
 # See your keys here: https://dashboard.stripe.com/apikeys
@@ -38,6 +39,7 @@ def stripe_customer_created():
 
   # Update the user record in the Anvil app to include the Stripe Customer ID
   user_row.update(stripe_id=stripe_customer_id)
+  print("user row updated: ", datetime.datetime.now())
 
 
 @anvil.server.http_endpoint('/stripe/stripe_subscription_updated')
@@ -63,11 +65,14 @@ def stripe_subscription_updated():
   subscription_status = payload_json.get("data").get("object").get("status")
   # If the subscription status is "Active"
   if subscription_status == "active":
+    time.sleep(3)
     price_id_of_plan = payload_json.get("data").get("object").get("items").get("data")[0].get("price").get("id")
     # Check the price/plan and update the user record in the DB accordingly
     if price_id_of_plan == PRICES["personal"]:
+      print("Checking subscription for Personal Plan: ", datetime.datetime.now())
       user["subscription"] = "personal"
     elif price_id_of_plan == PRICES["pro"]:
+      print("Checking subscription for Pro Plan: ", datetime.datetime.now())
       user["subscription"] = "pro"
   elif subscription_status == "past_due":
     anvil.email.send(from_name = "My SaaS app", 
