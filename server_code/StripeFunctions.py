@@ -23,6 +23,16 @@ PRICES = {"personal" : "price_1Ns3AAAp4vQdl4epHiqlYaIc", "pro" : "price_1Ns3DHAp
 def stripe_customer_created():
   # Get the Stripe Customer ID
   payload_json = json.loads(anvil.server.request.body.get_bytes())
+
+  # Make sure the event is in a format we expect
+  try:
+    event = stripe.Event.construct_from(
+      payload_json, stripe.api_key
+    )
+  except ValueError as e:
+    # Invalid payload
+    return anvil.server.HttpResponse(400)
+  
   stripe_customer_id = payload_json.get("data").get("object").get("id")
 
   # Get the Anvil user's row ID and transform it to work with Stripes API
@@ -93,25 +103,30 @@ def stripe_subscription_updated():
 @anvil.server.callable(require_user=True)
 def cancel_subscription():
   user = anvil.users.get_user()
-  stripe_customer_record = stripe.Customer.retrieve(
-    user["stripe_id"],
-    expand=["subscriptions"]
-  )
-  subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
-
   # Need to raise an exception here if the subscription isn't cancelled
-  stripe_subsription = stripe.Subscription.delete(
-    subscription_id,
-  )
+  
+  try:
+    stripe_customer_record = stripe.Customer.retrieve(
+      user["stripe_id"],
+      expand=["subscriptions"]
+    )
+    subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
+    stripe_subsription = stripe.Subscription.delete(
+      subscription_id,
+    )
+  except ValueError as e:
+    print("Error when cancelling subscription: ",e)
   
 
 @anvil.server.callable(require_user=True)
 def delete_user():
   user = anvil.users.get_user()
   # Need to raise an exception here if the subscription isn't deleted
-  stripe.Customer.delete(user["stripe_id"])
-  user.delete()
-  return "User deleted."
+  try:
+    stripe.Customer.delete(user["stripe_id"])
+    user.delete()
+  except ValueError as e:
+    print("Error when deleting user: ",e)
 
 
 
