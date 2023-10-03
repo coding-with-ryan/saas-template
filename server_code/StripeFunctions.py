@@ -106,16 +106,17 @@ def cancel_subscription():
   # Need to raise an exception here if the subscription isn't cancelled
   
   try:
-    stripe_customer_record = stripe.Customer.retrieve(
-      user["stripe_id"],
-      expand=["subscriptions"]
-    )
-    subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
-    stripe_subsription = stripe.Subscription.delete(
-      subscription_id,
-    )
+    # stripe_customer_record = stripe.Customer.retrieve(
+    #   user["stripe_id"],
+    #   expand=["subscriptions"]
+    # )
+    # subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
+    # stripe_subsription = stripe.Subscription.delete(
+    #   subscription_id,
+    # )
+    x = 1/0
   except ValueError as e:
-    print("Error when cancelling subscription: ",e)
+    print("Error when cancelling subscription: ", e, "\nUser ID: ", user.get_id())
   
 
 @anvil.server.callable(require_user=True)
@@ -123,35 +124,8 @@ def delete_user():
   user = anvil.users.get_user()
   # Need to raise an exception here if the subscription isn't deleted
   try:
-    stripe.Customer.delete(user["stripe_id"])
-    user.delete()
+    # stripe.Customer.delete(user["stripe_id"])
+    # user.delete()
+    x = 1/0
   except ValueError as e:
-    print("Error when deleting user: ",e)
-
-
-
-
-
-
-
-
-###############
-##############
-##############
-def cancel_subscription(subscription_id):
-    pass
-
-
-
-@anvil.server.http_endpoint('/stripe/stripe_checkout_completed')
-def stripe_checkout_completed():
-  # This should work but there's a bug that Ian has fixed that I'm waiting to propogate on the Anvil servers
-  # payload_json = anvil.server.request.body_json
-  # We'll use this as a workaround for now:
-  payload_json = json.loads(anvil.server.request.body.get_bytes())
-  payload_data_json = payload_json.get("data").get("object")
-  
-  # Get the user row ID we sent to Stripe earlier and reconstitute it to work with Anvil's user table
-  user_row_id = "[" + payload_data_json.get("client_reference_id").replace(",", "_") + "]"
-  user_row = app_tables.users.get_by_id(user_row_id)
-  payment_status = payload_data_json.get("payment_status")
+    print("Error when deleting user: ", e, "\nUser ID: ", user.get_id())

@@ -23,8 +23,8 @@ components:
     components:
     - name: title
       properties: {role: title, align: center, foreground: 'theme:Secondary', visible: true,
-        text: Unlock Percentage Magic Today!, font_size: 28, spacing_above: large,
-        spacing_below: large, bold: false}
+        text: Hello and welcome to a your SaaS product's splash. Replace this text with your logo and/or tagline.,
+        font_size: 28, spacing_above: large, spacing_below: large, bold: false}
       type: Label
       layout_properties: {grid_position: 'FUMSQT,OVHWPZ'}
     - name: login_button
