@@ -1,7 +1,7 @@
 container: {type: ColumnPanel}
 components:
 - name: column_panel_1
-  properties: {col_widths: '{"DIUTKH":15,"BUXJTR":45}'}
+  properties: {col_widths: '{"DIUTKH":20,"BUXJTR":40}'}
   type: ColumnPanel
   layout_properties: {grid_position: 'ICHDPK,DBCXAR'}
   components:

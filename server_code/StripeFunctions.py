@@ -10,6 +10,8 @@ import stripe
 import json
 
 
+import time
+
 # Set your secret key. Remember to switch to your live secret key in production.
 # See your keys here: https://dashboard.stripe.com/apikeys
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
