@@ -8,7 +8,7 @@ import anvil.server
 from ..Home import Home
 from ..StripePricing import StripePricing
 
-from ..AccountPage import AccountPage
+from ..AccountManagement.AccountPage import AccountPage as AccountPage
 
 class Main(MainTemplate):
   def __init__(self, **properties):
@@ -32,11 +32,6 @@ class Main(MainTemplate):
     anvil.users.login_with_form(allow_cancel=True, show_signup_option=False, allow_remembered=True)
     self.check_login_buttons()
 
-  def sign_out_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    anvil.users.logout()
-    self.check_login_buttons()
-
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
@@ -51,7 +46,6 @@ class Main(MainTemplate):
       self.create_account_button.visible = False
       self.login_button.visible = False
       
-      self.sign_out_button.visible = True
       if anvil.users.get_user()["subscription"] == "Free":
         self.upgrade_button.visible = True
       else:
@@ -59,7 +53,6 @@ class Main(MainTemplate):
     else:
       self.create_account_button.visible = True
       self.login_button.visible = True
-      self.sign_out_button.visible = False
       self.upgrade_button.visible = False
 
   def upgrade_button_click(self, **event_args):

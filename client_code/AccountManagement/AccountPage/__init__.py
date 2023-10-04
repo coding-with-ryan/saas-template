@@ -6,6 +6,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from ..AccountSettings import AccountSettings
+
 class AccountPage(AccountPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -15,5 +17,13 @@ class AccountPage(AccountPageTemplate):
 
   def settings_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    self.raise_event("x-close-alert")
+    alert(AccountSettings(), title=anvil.users.get_user()["email"], dismissible=True, buttons=None, large=True)
+
+  def logout_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.users.logout()
+    open_form('SplashPage')
+    self.raise_event("x-close-alert")
+
 

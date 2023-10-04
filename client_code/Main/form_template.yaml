@@ -32,10 +32,6 @@ components:
     type: Button
     layout_properties: {}
     event_bindings: {click: create_account_button_click}
-  - name: sign_out_button
-    properties: {role: tonal-button, text: Sign out, icon: 'fa:sign-out'}
-    type: Button
-    event_bindings: {click: sign_out_button_click}
   - name: login_button
     properties: {text: Log in, role: tonal-button, icon: 'fa:sign-in', background: ''}
     type: Button
