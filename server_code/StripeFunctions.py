@@ -106,16 +106,16 @@ def cancel_subscription():
   # Need to raise an exception here if the subscription isn't cancelled
   
   try:
-    # stripe_customer_record = stripe.Customer.retrieve(
-    #   user["stripe_id"],
-    #   expand=["subscriptions"]
-    # )
-    # subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
-    # stripe_subsription = stripe.Subscription.delete(
-    #   subscription_id,
-    # )
-    x = 1/0
-  except ValueError as e:
+    stripe_customer_record = stripe.Customer.retrieve(
+      user["stripe_id"],
+      expand=["subscriptions"]
+    )
+    subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
+    stripe_subsription = stripe.Subscription.delete(
+      subscription_id,
+    )
+    # x = 1/0
+  except Exception as e:
     print("Error when cancelling subscription: ", e, "\nUser ID: ", user.get_id())
   
 
@@ -124,8 +124,8 @@ def delete_user():
   user = anvil.users.get_user()
   # Need to raise an exception here if the subscription isn't deleted
   try:
-    # stripe.Customer.delete(user["stripe_id"])
-    # user.delete()
-    x = 1/0
-  except ValueError as e:
+    stripe.Customer.delete(user["stripe_id"])
+    user.delete()
+    # x = 1/0
+  except Exception as e:
     print("Error when deleting user: ", e, "\nUser ID: ", user.get_id())

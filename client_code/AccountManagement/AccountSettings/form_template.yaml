@@ -1,7 +1,7 @@
 container: {type: ColumnPanel}
 components:
 - name: column_panel_1
-  properties: {col_widths: '{"DIUTKH":20,"BUXJTR":40}'}
+  properties: {col_widths: '{"DIUTKH":23,"BUXJTR":55,"CDMHVZ":15,"RSZOBO":45,"TXLXZC":15,"YKEZLO":45,"NBEQGT":2}'}
   type: ColumnPanel
   layout_properties: {grid_position: 'ICHDPK,DBCXAR', full_width_row: true}
   components:
@@ -10,23 +10,54 @@ components:
     type: ColumnPanel
     layout_properties: {grid_position: 'WTJMGS,DIUTKH', full_width_row: true}
     components:
-    - name: account_button
+    - name: account_tab_button
       properties: {text: Account}
       type: Button
       layout_properties: {grid_position: 'MSFWQO,NNYMOB', full_width_row: true}
+    - name: subscription_tab_button
+      properties: {text: Subscription}
+      type: Button
+      layout_properties: {grid_position: 'NVIGHN,VSNIIL'}
+  - name: spacer_1
+    properties: {height: 299}
+    type: Spacer
+    layout_properties: {grid_position: 'WTJMGS,NBEQGT', row_background: 'theme:Primary'}
+  - name: first_name_label
+    properties: {text: 'FIrst name:', align: right, role: input-prompt}
+    type: Label
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR TKCULW,CDMHVZ'}
+  - name: first_name_text_box
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR TKCULW,RSZOBO'}
+  - name: last_name_label
+    properties: {text: 'Last name:', align: right, role: input-prompt}
+    type: Label
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR HRTGAK,TXLXZC HTWOYC,FHHFXB'}
+  - name: email_label
+    properties: {role: input-prompt, text: 'Email:', align: right}
+    type: Label
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR HRTGAK,TXLXZC JSWTIG,PISMIQ'}
+  - name: last_name_text_box
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR HRTGAK,YKEZLO IBOMTA,RDEQKT'}
+  - name: email_text_box
+    properties: {role: null}
+    type: TextBox
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR HRTGAK,YKEZLO DEYDNI,NYYWGH'}
+  - name: reset_password_button
+    properties: {text: Reset password}
+    type: Button
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR HRTGAK,YKEZLO FWSVZN,VMJFFU'}
+  - name: delete_button
+    properties: {text: Delete account, role: null, foreground: 'theme:Error', align: center}
+    type: Button
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR HRTGAK,YKEZLO PDWDFS,QLTFGZ'}
+    event_bindings: {click: delete_button_click}
   - name: column_panel_3
     properties: {}
     type: ColumnPanel
-    layout_properties: {grid_position: 'WTJMGS,BUXJTR', full_width_row: true}
-    components:
-    - name: spacer_1
-      properties: {height: -7}
-      type: Spacer
-      layout_properties: {grid_position: 'DBLVXP,AAPSHR', row_background: 'theme:Secondary
-          Container', full_width_row: true}
-    - name: delete_button
-      properties: {text: Delete account, role: null, foreground: 'theme:Error', align: left}
-      type: Button
-      layout_properties: {grid_position: 'HVHRTB,LZLGKD', full_width_row: true}
-      event_bindings: {click: delete_button_click}
+    layout_properties: {grid_position: 'WTJMGS,BUXJTR HNJEQQ,WPORWS', full_width_row: true}
+    components: []
 is_package: true
