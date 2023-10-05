@@ -7,3 +7,8 @@ from anvil.tables import app_tables
 import anvil.server
 
 
+@anvil.server.callable(require_user=True)
+def change_name(name):
+  user = anvil.users.get_user()
+  user["name"] = name
+  return name

@@ -6,14 +6,17 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from ..... import AccountManagement.USER as user 
+
 class ChangeName(ChangeNameTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.name_text_box.text = USER["name"]
 
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    anvil.server.call('change_name', self.name_text_box.text)
 
