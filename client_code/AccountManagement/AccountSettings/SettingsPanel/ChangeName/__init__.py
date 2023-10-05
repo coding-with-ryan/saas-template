@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-from ..... import AccountManagement.USER as user 
+from .... import USER
 
 class ChangeName(ChangeNameTemplate):
   def __init__(self, **properties):
@@ -19,4 +19,5 @@ class ChangeName(ChangeNameTemplate):
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('change_name', self.name_text_box.text)
+    self.raise_event("x-close-alert", value=True)
 
