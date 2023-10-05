@@ -34,13 +34,6 @@ class Home(HomeTemplate):
     """This method is called when the button is clicked"""
     anvil.server.call('cancel_subscription')
 
-  def outlined_button_2_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    if alert(DeleteAccountAlert(), buttons=None, large=True):
-      anvil.server.call('delete_user')
-    else:
-      print("Deletion cancelled")
-
 
     
     

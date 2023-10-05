@@ -27,16 +27,6 @@ components:
     type: Button
     event_bindings: {click: upgrade_button_click}
     layout_properties: {}
-  - name: create_account_button
-    properties: {text: Create an account, role: '', icon: ''}
-    type: Button
-    layout_properties: {}
-    event_bindings: {click: create_account_button_click}
-  - name: login_button
-    properties: {text: Log in, role: tonal-button, icon: 'fa:sign-in', background: ''}
-    type: Button
-    layout_properties: {}
-    event_bindings: {click: login_button_click}
   - name: account_button
     properties: {text: '', icon: 'fa:user', role: tonal-button, border: '', align: center,
       icon_align: top}

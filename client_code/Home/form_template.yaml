@@ -59,9 +59,4 @@ components:
   type: Button
   layout_properties: {grid_position: 'OBRJIS,PFLVZW'}
   event_bindings: {click: outlined_button_1_click}
-- name: outlined_button_2
-  properties: {text: Delete My Data, role: outlined-button}
-  type: Button
-  layout_properties: {grid_position: 'TQYQIY,HYLRON'}
-  event_bindings: {click: outlined_button_2_click}
 is_package: true

@@ -9,6 +9,8 @@ from anvil.tables import app_tables
 from .ChangeName import ChangeName
 from .ChangeEmail import ChangeEmail
 
+from ...DeleteAccountAlert import DeleteAccountAlert
+
 class SettingsPanel(SettingsPanelTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -23,8 +25,10 @@ class SettingsPanel(SettingsPanelTemplate):
     """This method is called when the button is clicked"""
     if alert(DeleteAccountAlert(), buttons=None, large=True):
       anvil.server.call('delete_user')
-    else:
-      print("Deletion cancelled")
+      self.parent.raise_event("x-close-alert")
+      anvil.users.logout()
+      open_form('LoginPage')
+      
 
   def change_name_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -44,7 +48,8 @@ class SettingsPanel(SettingsPanelTemplate):
 
   def reset_password_button_click(self, **event_args):
     """This method is called when the link is clicked"""
-    pass
+    anvil.users.send_password_reset_email(self.user["email"])
+    alert("A password reset email has been sent to your inbox.", title="Password reset email sent")
 
 
 
