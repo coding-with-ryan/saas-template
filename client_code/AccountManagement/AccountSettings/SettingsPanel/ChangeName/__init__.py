@@ -19,5 +19,5 @@ class ChangeName(ChangeNameTemplate):
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('change_name', self.name_text_box.text)
-    self.raise_event("x-close-alert", value=True)
+    self.raise_event("x-close-alert", value=self.name_text_box.text)
 

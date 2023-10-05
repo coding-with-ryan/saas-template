@@ -7,7 +7,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 from .ChangeName import ChangeName
-from ... import USER
 
 class SettingsPanel(SettingsPanelTemplate):
   def __init__(self, **properties):
@@ -27,7 +26,8 @@ class SettingsPanel(SettingsPanelTemplate):
 
   def change_name_click(self, **event_args):
     """This method is called when the link is clicked"""
-    if alert(ChangeName(), title="Change name", buttons=None, dismissible=True):
-      self.
+    new_name = alert(ChangeName(), title="Change name", buttons=None, dismissible=True)
+    if new_name
+      
       print("data bindings refreshed")
 
