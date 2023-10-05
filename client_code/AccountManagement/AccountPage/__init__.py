@@ -23,7 +23,7 @@ class AccountPage(AccountPageTemplate):
   def logout_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.logout()
-    open_form('SplashPage')
+    open_form('LoginPage')
     self.raise_event("x-close-alert")
 
 

@@ -9,7 +9,7 @@ from anvil.tables import app_tables
 from .ChangeName import ChangeName
 from .ChangeEmail import ChangeEmail
 
-from ...DeleteAccountAlert import DeleteAccountAlert
+from .DeleteAccountAlert import DeleteAccountAlert
 
 class SettingsPanel(SettingsPanelTemplate):
   def __init__(self, **properties):
@@ -25,7 +25,6 @@ class SettingsPanel(SettingsPanelTemplate):
     """This method is called when the button is clicked"""
     if alert(DeleteAccountAlert(), buttons=None, large=True):
       anvil.server.call('delete_user')
-      # self.parent.raise_event("x-close-alert")
       anvil.users.logout()
       open_form('LoginPage')
       
