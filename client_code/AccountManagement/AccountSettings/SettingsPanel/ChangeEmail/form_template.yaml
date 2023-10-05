@@ -1,6 +1,6 @@
 container: {type: ColumnPanel}
 components:
-- name: name_text_box
+- name: email_text_box
   properties: {}
   type: TextBox
   layout_properties: {grid_position: 'VZOSZH,KZWFSP', full_width_row: true}

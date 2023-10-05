@@ -11,4 +11,8 @@ import anvil.server
 def change_name(name):
   user = anvil.users.get_user()
   user["name"] = name
-  return name
+
+@anvil.server.callable(require_user=True)
+def change_email(email):
+  user = anvil.users.get_user()
+  user["email"] = email

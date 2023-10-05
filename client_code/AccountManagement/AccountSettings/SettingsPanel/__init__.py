@@ -7,6 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 from .ChangeName import ChangeName
+from .ChangeEmail import ChangeEmail
 
 class SettingsPanel(SettingsPanelTemplate):
   def __init__(self, **properties):
@@ -14,8 +15,9 @@ class SettingsPanel(SettingsPanelTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.name.text = USER["name"] if USER["name"] else "-"
-    self.email.text = USER["email"]
+    self.user = anvil.users.get_user(allow_remembered=True)
+    self.name.text = self.user["name"] if self.user["name"] else "-"
+    self.email.text = self.user["email"]
     
   def delete_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -26,8 +28,23 @@ class SettingsPanel(SettingsPanelTemplate):
 
   def change_name_click(self, **event_args):
     """This method is called when the link is clicked"""
-    new_name = alert(ChangeName(), title="Change name", buttons=None, dismissible=True)
-    if new_name
-      
-      print("data bindings refreshed")
+    new_name = alert(ChangeName(item=anvil.users.get_user()["name"]), title="Change name", buttons=None, dismissible=True)
+    if new_name:
+      anvil.server.call('change_name', new_name)
+      self.name.text = new_name
+      self.refresh_data_bindings()
+
+  def change_email_button_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    new_email = alert(ChangeEmail(item=anvil.users.get_user()["email"]), title="Change email", buttons=None, dismissible=True)
+    if new_email:
+      anvil.server.call('change_email', new_email)
+      self.email.text = new_email
+      self.refresh_data_bindings()
+
+  def reset_password_button_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
+
+
 
