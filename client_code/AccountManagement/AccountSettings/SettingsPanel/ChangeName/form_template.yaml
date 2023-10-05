@@ -1,0 +1,12 @@
+container: {type: ColumnPanel}
+components:
+- name: name_text_box
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'VZOSZH,KZWFSP', full_width_row: true}
+- name: save_button
+  properties: {text: Save, role: filled-button, align: right}
+  type: Button
+  layout_properties: {grid_position: 'KGFXNG,HETCJQ', full_width_row: true}
+  event_bindings: {click: save_button_click}
+is_package: true

@@ -1,0 +1,37 @@
+container: {type: ColumnPanel}
+components:
+- name: name_label
+  properties: {text: Name, align: left, role: title}
+  type: Label
+  layout_properties: {grid_position: 'QYMCWO,WUJRTD', full_width_row: true}
+- name: name
+  properties: {text: Name}
+  type: Label
+  layout_properties: {grid_position: 'VNZJDH,RHKATY', full_width_row: true}
+- name: change_name_button
+  properties: {text: Change name}
+  type: Link
+  layout_properties: {grid_position: 'RGWWII,LJYBAV', full_width_row: true}
+  event_bindings: {click: change_name_click}
+- name: email_label
+  properties: {role: title, text: Email, align: left}
+  type: Label
+  layout_properties: {grid_position: 'EJZUHY,LDRCOX', full_width_row: true}
+- name: email
+  properties: {text: Email}
+  type: Label
+  layout_properties: {grid_position: 'YGLJSQ,BSJTZY', full_width_row: true}
+- name: change_email_button
+  properties: {text: Change email}
+  type: Link
+  layout_properties: {grid_position: 'ZNXJJK,MXLYQX', full_width_row: true}
+- name: reset_password_button
+  properties: {text: Reset password}
+  type: Button
+  layout_properties: {grid_position: 'AHZKYB,UNHZGA', full_width_row: true}
+- name: delete_button
+  properties: {text: Delete account, role: null, foreground: 'theme:Error', align: center}
+  type: Button
+  layout_properties: {grid_position: 'FMJMEZ,RHJAMH', full_width_row: true}
+  event_bindings: {click: delete_button_click}
+is_package: true

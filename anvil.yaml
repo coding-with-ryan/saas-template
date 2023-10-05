@@ -50,7 +50,7 @@ db_schema:
       type: bool
       admin_ui: {order: 5, width: 200}
     - name: email_confirmation_key
-      admin_ui: {width: 200}
+      admin_ui: {order: 2.5, width: 200}
       type: string
     - name: signed_up
       admin_ui: {width: 200}
@@ -64,6 +64,9 @@ db_schema:
     - name: remembered_logins
       admin_ui: {order: 10, width: 200}
       type: simpleObject
+    - name: name
+      admin_ui: {order: -1, width: 200}
+      type: string
     title: Users
 secrets:
   stripe_test_api_key:

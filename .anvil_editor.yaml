@@ -1,16 +1,19 @@
 unique_ids:
   forms:
-    AccountManagement.AccountPage: '1695742803508420304136086.6508'
-    AccountManagement.AccountSettings: '169580511529367701976228.639824'
-    AccountManagement.DeleteAccountAlert: '1695740506884713486910967.3611'
-    Home: '1687266336075951822278990.3427'
     Main: '1687266325069404055233867.3924'
+    AccountManagement.AccountSettings.SettingsPanel: '1696496072953735158209406.5227'
+    AccountManagement.AccountPage: '1695742803508420304136086.6508'
+    AccountManagement.DeleteAccountAlert: '1695740506884713486910967.3611'
     SplashPage: '1694527742495867703491910.2004'
+    AccountManagement.AccountSettings: '169580511529367701976228.639824'
+    AccountManagement.AccountSettings.SettingsPanel.ChangeName: '1696498023656581294788193.291'
     StripePricing: '1687426234454422139748119.2184'
+    Home: '1687266336075951822278990.3427'
   modules:
     AccountManagement: '1696434737530444175557114.2707'
     user_permissions: '168753809331887088577210.01617'
   server_modules:
+    Account: '1696498189632222127292386.05222'
     StripeFunctions: '1695125112801558673098133.3318'
     Subscriptions: '1687425144862586721439081.0061'
     Utils: '1687447710599178355651104.09866'
