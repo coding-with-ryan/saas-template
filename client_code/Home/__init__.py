@@ -7,9 +7,6 @@ import anvil.users
 import anvil.server
 
 from ..user_permissions import catch_permission_errors
-from ..AccountManagement.DeleteAccountAlert import DeleteAccountAlert as DeleteAccountAlert
-
-
 
 class Home(HomeTemplate):
   def __init__(self, **properties):

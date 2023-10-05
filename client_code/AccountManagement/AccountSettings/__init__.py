@@ -6,7 +6,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-from ..DeleteAccountAlert import DeleteAccountAlert
 from .SettingsPanel import SettingsPanel
 
 class AccountSettings(AccountSettingsTemplate):

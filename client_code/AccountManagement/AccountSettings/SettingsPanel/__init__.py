@@ -25,7 +25,7 @@ class SettingsPanel(SettingsPanelTemplate):
     """This method is called when the button is clicked"""
     if alert(DeleteAccountAlert(), buttons=None, large=True):
       anvil.server.call('delete_user')
-      self.parent.raise_event("x-close-alert")
+      # self.parent.raise_event("x-close-alert")
       anvil.users.logout()
       open_form('LoginPage')
       
