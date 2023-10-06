@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-from .SettingsPanel import SettingsPanel
+from .AccountPanel import AccountPanel
 
 class AccountSettings(AccountSettingsTemplate):
   def __init__(self, **properties):
@@ -14,12 +14,12 @@ class AccountSettings(AccountSettingsTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.settings_main_panel.add_component(SettingsPanel())
+    self.settings_main_panel.add_component(AccountPanel())
 
   def account_tab_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.settings_main_panel.clear()
-    self.settings_main_panel.add_component(SettingsPanel())
+    self.settings_main_panel.add_component(AccountPanel())
 
 
 

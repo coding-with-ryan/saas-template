@@ -12,11 +12,11 @@ components:
 
       <span style="color:red;"><b>This is irreversible.</b></span>', format: restricted_html}
   type: RichText
-  layout_properties: {grid_position: 'ZWIIIP,FERHGV'}
+  layout_properties: {grid_position: 'ZWIIIP,FERHGV', full_width_row: true}
 - name: cancel_button
   properties: {text: Cancel, role: outlined-button}
   type: Button
-  layout_properties: {grid_position: 'JENPWS,GHWLWX'}
+  layout_properties: {grid_position: 'JENPWS,GHWLWX', full_width_row: true}
   event_bindings: {click: cancel_button_click}
 - name: delete_button
   properties: {text: 'Yes, delete my data.', role: filled-button}

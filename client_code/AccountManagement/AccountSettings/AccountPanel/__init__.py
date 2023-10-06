@@ -27,7 +27,8 @@ class AccountPanel(AccountPanelTemplate):
       anvil.server.call('delete_user')
       anvil.users.logout()
       print("closed alert")
-      self.raise_event("x-close-alert", value=True)
+      # Close Account Settings page
+      self.parent.parent.parent.raise_event("x-close-alert", value=True)
       open_form('LoginPage')
       
       
