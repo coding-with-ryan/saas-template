@@ -1,13 +1,14 @@
 unique_ids:
   forms:
+    AccountManagement.AccountSettings.AccountPanel.ChangeName: '1696498023656581294788193.291'
+    AccountManagement.AccountSettings.SubscriptionSettings: '1696602715843324414790490.65424'
     Main: '1687266325069404055233867.3924'
-    AccountManagement.AccountSettings.SettingsPanel.ChangeEmail: '1696513952135147620890510.68073'
-    AccountManagement.AccountSettings.SettingsPanel.DeleteAccountAlert: '1695740506884713486910967.3611'
-    AccountManagement.AccountSettings.SettingsPanel: '1696496072953735158209406.5227'
     AccountManagement.AccountPage: '1695742803508420304136086.6508'
+    AccountManagement.AccountSettings.AccountPanel.ChangeEmail: '1696513952135147620890510.68073'
     AccountManagement.AccountSettings: '169580511529367701976228.639824'
-    AccountManagement.AccountSettings.SettingsPanel.ChangeName: '1696498023656581294788193.291'
+    AccountManagement.AccountSettings.AccountPanel: '1696496072953735158209406.5227'
     StripePricing: '1687426234454422139748119.2184'
+    AccountManagement.AccountSettings.AccountPanel.DeleteAccountAlert: '1695740506884713486910967.3611'
     Home: '1687266336075951822278990.3427'
     LoginPage: '1694527742495867703491910.2004'
   modules:

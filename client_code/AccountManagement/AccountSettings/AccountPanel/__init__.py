@@ -1,4 +1,4 @@
-from ._anvil_designer import SettingsPanelTemplate
+from ._anvil_designer import AccountPanelTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -11,7 +11,7 @@ from .ChangeEmail import ChangeEmail
 
 from .DeleteAccountAlert import DeleteAccountAlert
 
-class SettingsPanel(SettingsPanelTemplate):
+class AccountPanel(AccountPanelTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -26,7 +26,10 @@ class SettingsPanel(SettingsPanelTemplate):
     if alert(DeleteAccountAlert(), buttons=None, large=True):
       anvil.server.call('delete_user')
       anvil.users.logout()
+      print("closed alert")
+      self.raise_event("x-close-alert", value=True)
       open_form('LoginPage')
+      
       
 
   def change_name_click(self, **event_args):
