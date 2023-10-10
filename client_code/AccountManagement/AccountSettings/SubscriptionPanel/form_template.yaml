@@ -1,0 +1,16 @@
+container: {type: ColumnPanel}
+components:
+- name: cancel_subscription_copy_1
+  properties: {url: 'https://billing.stripe.com/p/login/3cs7tRatL3HC4Bq000', text: Upgrade your subscription,
+    foreground: '', spacing_above: small}
+  type: Link
+  layout_properties: {grid_position: 'LZUHZT,PYLFZA', full_width_row: true}
+  event_bindings: {click: delete_button_click}
+- name: cancel_subscription
+  properties: {url: 'https://billing.stripe.com/p/login/3cs7tRatL3HC4Bq000', text: Cancel your subscription,
+    foreground: 'theme:Error', spacing_above: small}
+  type: Link
+  layout_properties: {grid_position: 'MKTHMH,IFAJDR', full_width_row: true}
+  event_bindings: {click: delete_button_click}
+  components: []
+is_package: true

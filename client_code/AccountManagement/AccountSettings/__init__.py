@@ -7,6 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 from .AccountPanel import AccountPanel
+from .SubscriptionPanel import SubscriptionPanel
 
 class AccountSettings(AccountSettingsTemplate):
   def __init__(self, **properties):
@@ -20,6 +21,12 @@ class AccountSettings(AccountSettingsTemplate):
     """This method is called when the button is clicked"""
     self.settings_main_panel.clear()
     self.settings_main_panel.add_component(AccountPanel())
+
+  def subscription_tab_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.settings_main_panel.clear()
+    self.settings_main_panel.add_component(SubscriptionPanel())
+
 
 
 
