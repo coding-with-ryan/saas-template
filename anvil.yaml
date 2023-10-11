@@ -14,9 +14,9 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: LoginPage}
-package_name: SaaS_Template_2
+package_name: SaaS_Template
 allow_embedding: false
-name: SaaS Template 2
+name: SaaS Template
 runtime_options:
   version: 3
   client_version: '3'
