@@ -16,16 +16,19 @@ class Main(MainTemplate):
     self.init_components(**properties)
     
     # Any code you write here will run before the form opens.
+    self.user = anvil.users.get_user()
     self.content_panel.add_component(Home(), full_width_row=True)
-    self.check_login_buttons()
+    self.check_upgrade_button()
+    
 
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
 
-  def check_login_buttons(self):
-    if anvil.users.get_user():
-      if anvil.users.get_user()["subscription"] == "Free":
+  def check_upgrade_button(self):
+    
+    if self.user:
+      if self.user["subscription"] == "Free" or not self.user["subscription"]:
         self.upgrade_button.visible = True
       else:
         self.upgrade_button.visible = False
@@ -38,7 +41,8 @@ class Main(MainTemplate):
 
   def account_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    alert(AccountPage(), title=anvil.users.get_user()["email"], dismissible=True, buttons=None)
+    alert(AccountPage(), title=self.user["email"], dismissible=True, buttons=None)
+
 
 
 

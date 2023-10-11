@@ -19,10 +19,9 @@ class LoginPage(LoginPageTemplate):
     user = anvil.users.login_with_form(allow_cancel=True, show_signup_option=True, allow_remembered=True)
     if user:
       open_form('Main')
-    
+
       # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
-      alert("Welcome to your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.")
-      
+      alert("Welcome to your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", large=True)
 
   def form_show(self, **event_args):
     """This method is called when the HTML panel is shown on the screen"""
