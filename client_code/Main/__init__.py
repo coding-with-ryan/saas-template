@@ -26,7 +26,6 @@ class Main(MainTemplate):
     alert(StripePricing(), large=True)
 
   def check_upgrade_button(self):
-    
     if self.user:
       if self.user["subscription"] == "Free" or not self.user["subscription"]:
         self.upgrade_button.visible = True
@@ -38,7 +37,9 @@ class Main(MainTemplate):
   def upgrade_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
-
+    # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
+    Notification("With a subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
+    
   def account_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(AccountPage(), title=self.user["email"], dismissible=True, buttons=None)

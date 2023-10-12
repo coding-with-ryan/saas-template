@@ -24,4 +24,14 @@ class StripePricing(StripePricingTemplate):
     user_id = user_id[1:-1].replace(",", "_")
     self.dom_nodes["stripe-pricing-table"].setAttribute("client-reference-id", user_id)
 
+  # TEMPLATE EXPLANATION ONLY - DELETE LINES 28-34 WHEN YOU'RE READY
+  def form_show(self, **event_args):
+    """This method is called when the form is shown on the page"""
+    Notification("This panel is created using Stripe's embeddable pricing table:\nhttps://stripe.com/docs/payments/checkout/pricing-table \n\nSelect a plan to subscribe to and complete the checkout process. The Stripe integration is in test mode and no money will be taken.""",
+      title="Template Explanation",
+      timeout=None,
+      style="warning"
+    ).show()
+
+
 

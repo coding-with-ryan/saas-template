@@ -1,6 +1,10 @@
 from ._anvil_designer import ChangeNameTemplate
 from anvil import *
 import anvil.server
+import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 
 class ChangeName(ChangeNameTemplate):
   def __init__(self, **properties):
@@ -9,8 +13,10 @@ class ChangeName(ChangeNameTemplate):
 
     # Any code you write here will run before the form opens.
 
+  # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('change_name', self.name_text_box.text)
+    Notification("This calls the change_name function in the Users server module. You can add similar functionality to allow users to manage their information.", title="Template Explanation", timeout=None, style="warning").show()
     self.raise_event("x-close-alert", value=self.name_text_box.text)
 

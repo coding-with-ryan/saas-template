@@ -2,6 +2,10 @@ from ._anvil_designer import AccountPanelTemplate
 from anvil import *
 import anvil.server
 import anvil.users
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+
 from .ChangeName import ChangeName
 from .ChangeEmail import ChangeEmail
 
@@ -36,6 +40,9 @@ class AccountPanel(AccountPanelTemplate):
       anvil.server.call('change_name', new_name)
       self.name.text = new_name
       self.refresh_data_bindings()
+
+    # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
+    Notification("Now, you've seen how the template edits user information, let's click the subscriptions tab and then click cancel subscription.", title="Template Explanation", timeout=None, style="warning").show()
 
   def change_email_button_click(self, **event_args):
     """This method is called when the link is clicked"""

@@ -1,4 +1,6 @@
-container: {type: ColumnPanel}
+container:
+  type: ColumnPanel
+  event_bindings: {show: form_show}
 components:
 - name: column_panel_1
   properties: {col_widths: '{"DIUTKH":23,"BUXJTR":55,"NBEQGT":2}'}
