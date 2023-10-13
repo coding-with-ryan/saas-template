@@ -25,7 +25,8 @@ runtime_options:
 startup_form: null
 native_deps: {head_html: "<!-- Anvil Generated Migration Script -->\n<script type=\"\
     module\">\n    window.anvil.enableLegacy({\n        bootstrap3: true,\n      \
-    \  classNames: true,\n        __dict__: true,\n    });\n</script>\n"}
+    \  classNames: true,\n        __dict__: true,\n    });\n  \n  document.getElementsByClassName(\"\
+    test\");\n</script>\n"}
 db_schema:
   users:
     client: none

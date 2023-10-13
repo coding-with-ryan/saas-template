@@ -12,6 +12,14 @@ components:
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'DLQMFA,HOVZYD'}
+  - name: TEMPLATE_EXPLANATION_rich_text
+    properties: {content: 'Hello and welcome to Anvil''s SaaS template! If you haven''t
+        found it already, here is a guide which will take you through how this template
+        works and how to build on it:
+
+        [https://anvil.works]()', font_size: 24}
+    type: RichText
+    layout_properties: {grid_position: 'HWIYIJ,RJYZZM'}
   - name: spacer_2
     properties: {height: 32}
     type: Spacer
@@ -19,15 +27,14 @@ components:
   - name: outlined_card_1
     properties: {role: outlined-card, col_spacing: medium, visible: false}
     type: ColumnPanel
-    layout_properties: {grid_position: 'IPDJEA,ELPSDO', full_width_row: true}
+    layout_properties: {grid_position: 'IPDJEA,ELPSDO SXNBPA,YBDAKR', full_width_row: true}
     components:
     - name: title
       properties: {role: title, align: center, foreground: 'theme:Secondary', visible: true,
-        text: "Hello and welcome to a your SaaS product's login page.\n\n Signup by\
-          \ pressing the login button below.", font_size: 28, spacing_above: large,
+        text: ' Signup by pressing the login button below.', font_size: 28, spacing_above: large,
         spacing_below: large, bold: false}
       type: Label
-      layout_properties: {grid_position: 'FUMSQT,OVHWPZ'}
+      layout_properties: {grid_position: 'OCEWLM,UYELCF'}
     - name: login_button
       properties: {role: filled-button, text: Login, font_size: 30, spacing_above: large,
         icon_align: right, spacing_below: large, bold: false, underline: false, icon: ''}
@@ -38,8 +45,4 @@ components:
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'IPDJEA,OGVDPR'}
-- name: label_1
-  properties: {text: Replace this text with your logo and/or tagline. Then run the app and}
-  type: Label
-  layout_properties: {slot: default}
 is_package: true

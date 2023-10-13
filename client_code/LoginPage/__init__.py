@@ -12,6 +12,9 @@ class LoginPage(LoginPageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+    hidden_label = anvil.js.get_dom_node(self.TEMPLATE_EXPLANATION_rich_text)
+    print(dir(hidden_label.classList.add("anvil-designer-only")))
     
 
   def login_button_click(self, **event_args):
