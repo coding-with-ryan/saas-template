@@ -17,7 +17,25 @@ components:
         found it already, here is a guide which will take you through how this template
         works and how to build on it:
 
-        [https://anvil.works]()', font_size: 24}
+        [https://anvil.works]()
+
+
+        There are a couple of prerequisites to using this template:
+
+        1. A [Stripe account](https://stripe.com)
+
+        2. A basic knowledge of Anvil (a great start is Anvil''s Feedback form tutorial:
+
+        [https://anvil.works/learn/tutorials/feedback-form](https://anvil.works/learn/tutorials/feedback-form))
+
+
+        To get an idea of what out-of-the-box functionality the template has, try
+        running the app and following along with the instructions.
+
+
+        Once you''ve done that, come back to the editor and search for code comments
+        which begin with "TEMPLATE EXPLANATION". These will give you instructions
+        to help you setup your SaaS app.', font_size: 24}
     type: RichText
     layout_properties: {grid_position: 'HWIYIJ,RJYZZM'}
   - name: spacer_2
@@ -25,16 +43,15 @@ components:
     type: Spacer
     layout_properties: {grid_position: 'IPDJEA,ODIPQA', full_width_row: true}
   - name: outlined_card_1
-    properties: {role: outlined-card, col_spacing: medium, visible: false}
+    properties: {role: outlined-card, col_spacing: medium, visible: true}
     type: ColumnPanel
     layout_properties: {grid_position: 'IPDJEA,ELPSDO SXNBPA,YBDAKR', full_width_row: true}
     components:
     - name: title
-      properties: {role: title, align: center, foreground: 'theme:Secondary', visible: true,
-        text: ' Signup by pressing the login button below.', font_size: 28, spacing_above: large,
-        spacing_below: large, bold: false}
+      properties: {text: 'Add your company name, tagline and/or logo here.', visible: true,
+        align: center, role: headline}
       type: Label
-      layout_properties: {grid_position: 'OCEWLM,UYELCF'}
+      layout_properties: {grid_position: 'SVXNZN,LLDZNU'}
     - name: login_button
       properties: {role: filled-button, text: Login, font_size: 30, spacing_above: large,
         icon_align: right, spacing_below: large, bold: false, underline: false, icon: ''}

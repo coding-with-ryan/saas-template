@@ -13,8 +13,7 @@ class LoginPage(LoginPageTemplate):
 
     # Any code you write here will run before the form opens.
 
-    hidden_label = anvil.js.get_dom_node(self.TEMPLATE_EXPLANATION_rich_text)
-    print(dir(hidden_label.classList.add("anvil-designer-only")))
+    anvil.js.get_dom_node(self.TEMPLATE_EXPLANATION_rich_text).classList.add("anvil-designer-only")
     
 
   def login_button_click(self, **event_args):
@@ -29,6 +28,7 @@ class LoginPage(LoginPageTemplate):
   def form_show(self, **event_args):
     """This method is called when the HTML panel is shown on the screen"""
     if anvil.users.get_user():
+      self.outlined_card_1.visible = False
       open_form('Main')
     else:
       # Stops the glitch in rendering components if we're only going to open the main form anyway
