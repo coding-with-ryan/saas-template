@@ -68,6 +68,9 @@ db_schema:
     - name: name
       admin_ui: {order: -1, width: 200}
       type: string
+    - name: cancel_at_period_end
+      admin_ui: {order: 8.5, width: 200}
+      type: bool
     title: Users
 secrets:
   stripe_test_api_key:
