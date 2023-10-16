@@ -88,7 +88,10 @@ def stripe_subscription_updated():
       user["subscription"] = "pro"
 
     if payload_json.get("data").get("object").get("cancel_at_period_end"):
-      user["cancel_subscription_at_period_end"] =
+      user["cancel_subscription_at_period_end"] = True
+    else:
+      user["cancel_subscription_at_period_end"] = False
+      
   elif subscription_status == "past_due":
     anvil.email.send(from_name = "My SaaS app", 
                  to = "",
