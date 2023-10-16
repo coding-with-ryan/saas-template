@@ -14,6 +14,9 @@ class LoginPage(LoginPageTemplate):
     # Any code you write here will run before the form opens.
 
     anvil.js.get_dom_node(self.TEMPLATE_EXPLANATION_rich_text).classList.add("anvil-designer-only")
+
+    # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
+    Notification("Here's your SaaS app's login page. To start click login and then signup for an account.", title="Template Explanation", timeout=None, style="warning").show()
     
 
   def login_button_click(self, **event_args):
