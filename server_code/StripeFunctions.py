@@ -9,8 +9,6 @@ import anvil.server
 import stripe
 import json
 
-
-import time
 import datetime
 
 # Set your secret key. Remember to switch to your live secret key in production.
@@ -69,13 +67,17 @@ def stripe_subscription_updated():
   
   # Need to get the users record from the DB based on the subscription objects "customer" field
   stripe_customer_id = payload_json.get("data").get("object").get("customer")
-  user = app_tables.users.get(stripe_id=stripe_customer_id)
+
+  stripe_customer = stripe.Customer.retrieve(
+      stripe_customer_id
+    )
+  stripe_customer_email = stripe_customer["email"]
+  user = app_tables.users.get(email=stripe_customer_email)
 
   # Check the subscription objects status: https://stripe.com/docs/api/subscriptions/object#subscription_object-status
   subscription_status = payload_json.get("data").get("object").get("status")
   # If the subscription status is "Active"
   if subscription_status == "active":
-    time.sleep(3)
     price_id_of_plan = payload_json.get("data").get("object").get("items").get("data")[0].get("price").get("id")
     # Check the price/plan and update the user record in the DB accordingly
     if price_id_of_plan == PRICES["personal"]:

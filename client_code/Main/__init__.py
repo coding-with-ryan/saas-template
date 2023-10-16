@@ -10,8 +10,6 @@ from ..StripePricing import StripePricing
 
 from ..AccountManagement.AccountPage import AccountPage as AccountPage
 
-upgrade_notification_dismissed = False
-
 class Main(MainTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -23,10 +21,7 @@ class Main(MainTemplate):
     self.check_upgrade_button()
 
     # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
-    if anvil.users.get_user()["subscription"] in ["personal", "pro"]:
-      Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
-    else:
-      Notification("Welcome to your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()
+    self.TEMPLATE_EXPLANATION()
       
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -44,9 +39,14 @@ class Main(MainTemplate):
   def upgrade_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
-    # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
-    Notification("With a subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
     
   def account_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(AccountPage(), title=self.user["email"], dismissible=True, buttons=None)
+
+  # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY    
+  def TEMPLATE_EXPLANATION(self):
+    if anvil.users.get_user()["subscription"] in ["personal", "pro"]:
+      Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
+    else:
+      Notification("This is your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()

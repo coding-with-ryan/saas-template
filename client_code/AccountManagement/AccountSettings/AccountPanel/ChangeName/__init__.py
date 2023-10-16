@@ -17,6 +17,6 @@ class ChangeName(ChangeNameTemplate):
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('change_name', self.name_text_box.text)
-    Notification("This calls the change_name function in the Users server module. You can add similar functionality to allow users to manage their information.", title="Template Explanation", timeout=None, style="warning").show()
+    Notification("This calls the change_name function in the Users server module.", title="Template Explanation", timeout=None, style="warning").show()
     self.raise_event("x-close-alert", value=self.name_text_box.text)
 
