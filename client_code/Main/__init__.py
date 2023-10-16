@@ -10,7 +10,7 @@ from ..StripePricing import StripePricing
 
 from ..AccountManagement.AccountPage import AccountPage as AccountPage
 
-global upgrade_notification_dismissed = False
+upgrade_notification_dismissed = False
 
 class Main(MainTemplate):
   def __init__(self, **properties):
@@ -25,7 +25,7 @@ class Main(MainTemplate):
     if anvil.users.get_user()["subscription"] in ["personal", "pro"]:
       Notification("With a subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
     else:
-      pass
+      
       
     
 
