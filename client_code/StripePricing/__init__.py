@@ -27,7 +27,7 @@ class StripePricing(StripePricingTemplate):
   # TEMPLATE EXPLANATION ONLY - DELETE LINES 28-34 WHEN YOU'RE READY
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
-    Notification("This panel is created using Stripe's embeddable pricing table:\nhttps://stripe.com/docs/payments/checkout/pricing-table \n\nSelect a plan to subscribe to and complete the checkout process. The Stripe integration is in test mode and no money will be taken.""",
+    Notification("This panel is created using Stripe's embeddable pricing table:\nhttps://stripe.com/docs/payments/checkout/pricing-table \n\nSelect a plan to subscribe to and complete the checkout process. The Stripe integration is in test mode, so money will be taken. You can use one of Stripe's test cards which are found here: https://stripe.com/docs/testing#cards""",
       title="Template Explanation",
       timeout=None,
       style="warning"

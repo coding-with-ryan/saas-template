@@ -43,18 +43,3 @@ class Main(MainTemplate):
   def account_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(AccountPage(), title=self.user["email"], dismissible=True, buttons=None)
-
-
-
-
-
-
-
-    
-
-
-
-
-
-  
-
