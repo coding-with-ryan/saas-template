@@ -22,13 +22,12 @@ class Main(MainTemplate):
     self.content_panel.add_component(Home(), full_width_row=True)
     self.check_upgrade_button()
 
+    # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
     if anvil.users.get_user()["subscription"] in ["personal", "pro"]:
-      Notification("With a subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
+      Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
     else:
+      Notification("Welcome to your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()
       
-      
-    
-
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
