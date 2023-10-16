@@ -10,6 +10,8 @@ from ..StripePricing import StripePricing
 
 from ..AccountManagement.AccountPage import AccountPage as AccountPage
 
+global upgrade_notification_dismissed = False
+
 class Main(MainTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -19,6 +21,12 @@ class Main(MainTemplate):
     self.user = anvil.users.get_user()
     self.content_panel.add_component(Home(), full_width_row=True)
     self.check_upgrade_button()
+
+    if anvil.users.get_user()["subscription"] in ["personal", "pro"]:
+      Notification("With a subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
+    else:
+      pass
+      
     
 
   def pricing_button_click(self, **event_args):
