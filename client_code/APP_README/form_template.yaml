@@ -1,12 +1,14 @@
 container:
   type: HtmlTemplate
-  properties: {html: "<body style=\"padding:20px;\">\n<h1>Getting Started</h1>\n<h4>Visit\
-      \ <a href=\"https://anvil.works\">https://anvil.works</a> for a full complementary\
-      \ guide & video for getting started with this template.</h4>\n<br>\n<hr>\n<h2>Prerequisites</h2>\n\
-      To use this template you will need the following:\n<ul>\n  <li>A <a href=\"\
-      https://dashboard.stripe.com/register\">Stripe account</a></li>\n  <li>An Anvil\
-      \ <a href = \"https://anvil.works/pricing\">Personal Plan</a> or above</li>\n\
-      \  <li>A basic knowledge of Anvil (a great start is Anvil's <a href=\"https://anvil.works/learn/tutorials/feedback-form\"\
-      >Feedback form tutorial</a></li>\n</ul>\n</body>"}
+  properties: {html: "<div style=\"padding:20px;\">\n  \n  <h1>Getting Started</h1>\n\
+      \  <h4>Visit <a href=\"https://anvil.works\">https://anvil.works</a> for a full\
+      \ complementary guide & video for getting started with this template.</h4>\n\
+      \  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n  <p>To use this template you will\
+      \ need the following:</p>\n  <ul>\n    <li>A <a href=\"https://dashboard.stripe.com/register\"\
+      >Stripe account</a></li>\n    <li>An Anvil <a href = \"https://anvil.works/pricing\"\
+      >Personal Plan</a> or above</li>\n    <li>A basic knowledge of Anvil (a great\
+      \ start is Anvil's <a href=\"https://anvil.works/learn/tutorials/feedback-form\"\
+      >Feedback form tutorial</a></li>\n  </ul>\n  <br>\n  <hr>\n  <h2>Configuring\
+      \ Stripe</h2>\n  <p></p>\n  \n</body>"}
 components: []
 is_package: true
