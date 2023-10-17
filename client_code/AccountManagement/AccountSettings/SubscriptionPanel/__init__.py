@@ -11,6 +11,9 @@ class SubscriptionPanel(SubscriptionPanelTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    # Replace this URL with your own
+    self.manage_subscription.url = ""
+
     # Any code you write here will run before the form opens.
     user = anvil.users.get_user(allow_remembered=True)
     if not user["subscription"] or user["subscription"] == "expired":
