@@ -1,25 +1,12 @@
 container:
   type: HtmlTemplate
-  properties: {html: "<h1> Table of Contents </h1>\n1. [General Info](#general-info)\n\
-      2. [Technologies](#technologies)\n3. [Installation](#installation)\n4. [Collaboration](#collaboration)\n\
-      5. [FAQs](#faqs)\n### General Info\n***\nWrite down general information about\
-      \ your project. It is a good idea to always put a project status in the readme\
-      \ file. This is where you can add it. \n### Screenshot\n![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)\n\
-      ## Technologies\n***\nA list of technologies used within the project:\n* [Technology\
-      \ name](https://example.com): Version 12.3 \n* [Technology name](https://example.com):\
-      \ Version 2.34\n* [Library name](https://example.com): Version 1234\n## Installation\n\
-      ***\nA little intro about the installation. \n```\n$ git clone https://example.com\n\
-      $ cd ../path/to/the/file\n$ npm install\n$ npm start\n```\nSide information:\
-      \ To use the application in a special environment use ```lorem ipsum``` to start\n\
-      ## Collaboration\n***\nGive instructions on how to collaborate with your project.\n\
-      > Maybe you want to write a quote in this part. \n> Should it encompass several\
-      \ lines?\n> This is how you do it.\n## FAQs\n***\nA list of frequently asked\
-      \ questions\n1. **This is a question in bold**\nAnswer to the first question\
-      \ with _italic words_. \n2. __Second question in bold__ \nTo answer this question,\
-      \ we use an unordered list:\n* First point\n* Second Point\n* Third point\n\
-      3. **Third question in bold**\nAnswer to the third question with *italic words*.\n\
-      4. **Fourth question in bold**\n| Headline 1 in the tablehead | Headline 2 in\
-      \ the tablehead | Headline 3 in the tablehead |\n|:--------------|:-------------:|--------------:|\n\
-      | text-align left | text-align center | text-align right |"}
+  properties: {html: "<body style=\"padding:20px;\">\n<h1>Getting Started</h1>\n<h4>Visit\
+      \ <a href=\"https://anvil.works\">https://anvil.works</a> for a full complementary\
+      \ guide & video for getting started with this template.</h4>\n<br>\n<hr>\n<h2>Prerequisites</h2>\n\
+      To use this template you will need the following:\n<ul>\n  <li>A <a href=\"\
+      https://dashboard.stripe.com/register\">Stripe account</a></li>\n  <li>An Anvil\
+      \ <a href = \"https://anvil.works/pricing\">Personal Plan</a> or above</li>\n\
+      \  <li>A basic knowledge of Anvil (a great start is Anvil's <a href=\"https://anvil.works/learn/tutorials/feedback-form\"\
+      >Feedback form tutorial</a></li>\n</ul>\n</body>"}
 components: []
 is_package: true
