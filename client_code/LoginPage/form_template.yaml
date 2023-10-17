@@ -28,14 +28,16 @@ components:
 
         [https://anvil.works/learn/tutorials/feedback-form](https://anvil.works/learn/tutorials/feedback-form))
 
-
-        To get an idea of what out-of-the-box functionality the template has, try
-        running the app and following along with the instructions.
+        3. An Anvil Personal Plan or above
 
 
-        Once you''ve done that, come back to the editor and search for code comments
-        which begin with "TEMPLATE EXPLANATION". These will give you instructions
-        to help you setup your SaaS app.', font_size: 24}
+        To get an idea of what out-of-the-box functionality the template has, start
+        by running the app and following along with the instructions.
+
+
+        Once you''ve done that, come back to the editor and follow the instructions
+        in the APP_README form. This will give you instructions to help you setup
+        your SaaS app.', font_size: 24}
     type: RichText
     layout_properties: {grid_position: 'HWIYIJ,RJYZZM'}
   - name: spacer_2

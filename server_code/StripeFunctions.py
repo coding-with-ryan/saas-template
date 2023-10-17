@@ -87,7 +87,7 @@ def stripe_subscription_updated():
       print("Checking subscription for Pro Plan: ", datetime.datetime.now())
       user["subscription"] = "pro"
 
-    if payload_json.get("data").get("object").get("cancel_at_period_end"):
+    if payload_json.get("data").get("object").get("cancel_subscription_at_period_end"):
       user["cancel_subscription_at_period_end"] = True
     else:
       user["cancel_subscription_at_period_end"] = False

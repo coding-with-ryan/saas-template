@@ -46,9 +46,9 @@ class Main(MainTemplate):
 
   # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY    
   def TEMPLATE_EXPLANATION(self):
-    if anvil.users.get_user()["subscription"] in ["personal", "pro"]:
+    if anvil.users.get_user()["subscription"] in ["personal", "pro"] and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
       Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
-    elif anvil.users.get_user()["cancel_at_period_end"]:
+    elif anvil.users.get_user()["cancel_subscription_at_period_end"]:
       Notification("You've cancelled your subscription and, once it expires, your user records subscription status will be updated.", title="Template Explanation", timeout=None, style="warning").show()
       Notification("That's the tour of the app template complete. Now it's time for you to begin adding your own Stripe account details and finding out how to make the app your own. .", title="Template Explanation", timeout=None, style="warning").show()
     else:
