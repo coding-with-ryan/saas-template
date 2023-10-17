@@ -1,10 +1,10 @@
 container:
   type: HtmlTemplate
-  properties: {html: "<h1> Table of Contents </h1>\n1. [General Info](#general-info)\n\
-      2. [Technologies](#technologies)\n3. [Installation](#installation)\n4. [Collaboration](#collaboration)\n\
-      5. [FAQs](#faqs)\n### General Info\n***\nWrite down general information about\
-      \ your project. It is a good idea to always put a project status in the readme\
-      \ file. This is where you can add it. \n### Screenshot\n![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)\n\
+  properties: {html: "<h1> README </h1>\n1. [General Info](#general-info)\n2. [Technologies](#technologies)\n\
+      3. [Installation](#installation)\n4. [Collaboration](#collaboration)\n5. [FAQs](#faqs)\n\
+      ### General Info\n***\nWrite down general information about your project. It\
+      \ is a good idea to always put a project status in the readme file. This is\
+      \ where you can add it. \n### Screenshot\n![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)\n\
       ## Technologies\n***\nA list of technologies used within the project:\n* [Technology\
       \ name](https://example.com): Version 12.3 \n* [Technology name](https://example.com):\
       \ Version 2.34\n* [Library name](https://example.com): Version 1234\n## Installation\n\
