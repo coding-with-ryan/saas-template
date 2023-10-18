@@ -26,7 +26,7 @@ class AccountPage(AccountPageTemplate):
     open_form('LoginPage')
     self.raise_event("x-close-alert")
 
-  # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
+  # TEMPLATE EXPLANATION ONLY - DELETE ROWS 29-32 WHEN YOU'RE READY
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
     Notification("The AccountPage is a simple beginning to self-serve account management and a good foundation for you to build on for your users.\n\nClick the Settings button next.", title="Template Explanation", timeout=None, style="warning").show()

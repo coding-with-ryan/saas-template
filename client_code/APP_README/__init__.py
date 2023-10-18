@@ -11,4 +11,4 @@ class APP_README(APP_READMETemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
+    # TEMPLATE EXPLANATION ONLY - THIS FORM IS ONLY HERE TO GET YOU STARTED WITH THE TEMPLATE. IT CAN BE DELETED WHEN YOU'RE READY.

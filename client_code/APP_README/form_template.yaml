@@ -40,9 +40,15 @@ container:
       \ -> AccountSettings -> SubscriptionPanel, update line 15 to point the \"update_subscription\"\
       \ component's URL to your Stripe's customer portal URL</li>\n  </ol>\n  <p>Now\
       \ your Stripe integration is complete, it is time to try out this app.</p>\n\
-      \  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>Start by setting the startup\
-      \ form to be the Login form. Then <a href=\"https://anvil.works/docs/editor#the-anvil-editor\"\
+      \  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>Start by setting Login form\
+      \ the to be the <a href=\"https://anvil.works/docs/client/components/forms#the-startup-form-or-module\"\
+      >\"startup form\"</a>. Then <a href=\"https://anvil.works/docs/editor#the-anvil-editor\"\
       >run the app</a> and follow along with the in-app instruction notifications.</p>\n\
-      \  \n</body>"}
+      \  <br>\n  <hr>\n  <h2>Making this app your own</h2>\n  <p>Now your integration\
+      \ with Stripe is setup and you've seen what its's like to be a user of the app,\
+      \ it's time to make this app your own.</p>\n  <p>Let's start by removing all\
+      \ of the in-app instruction notifications:</p>\n  <ol>\n    <li>Search (<i>ctrl+shift+F</i>)\
+      \ for \"# TEMPLATE EXPLANATION ONLY\" comments and delete all the lines each\
+      \ comment informs you to</li>\n  </ol>\n</body>"}
 components: []
 is_package: true

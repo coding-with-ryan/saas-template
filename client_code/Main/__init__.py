@@ -20,7 +20,7 @@ class Main(MainTemplate):
     self.content_panel.add_component(Home(), full_width_row=True)
     self.check_upgrade_button()
 
-    # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
+    # TEMPLATE EXPLANATION ONLY - DELETE ROWS 23-24 WHEN YOU'RE READY
     self.TEMPLATE_EXPLANATION()
       
   def pricing_button_click(self, **event_args):
@@ -44,7 +44,7 @@ class Main(MainTemplate):
     """This method is called when the button is clicked"""
     alert(AccountPage(), title=self.user["email"], dismissible=True, buttons=None)
 
-  # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY    
+  # TEMPLATE EXPLANATION ONLY - DELETE ROWS 47-55 WHEN YOU'RE READY    
   def TEMPLATE_EXPLANATION(self):
     if anvil.users.get_user()["subscription"] in ["personal", "pro"] and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
       Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()

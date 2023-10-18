@@ -24,7 +24,7 @@ class Home(HomeTemplate):
       percentage = anvil.server.call('calculate_percentage_of', self.number_1_textbox.text, self.number_2_textbox.text)
       self.original_number_1.text, self.percentage_label.text, self.original_number_2.text = self.number_1_textbox.text, str(percentage) + "%", self.number_2_textbox.text
       self.answer_rich_text.visible = True
-      # TEMPLATE EXPLANATION ONLY - DELETE WHEN YOU'RE READY
+      # TEMPLATE EXPLANATION ONLY - DELETE ROWS 27-28 WHEN YOU'RE READY
       Notification("Now you can use the calculator. Open the account setting panel in the top right of the screen.", title="Template Explanation", timeout=None, style="warning").show()
     else:
       Notification("Please enter two numbers.")
