@@ -49,6 +49,6 @@ container:
       \ it's time to make this app your own.</p>\n  <p>Let's start by removing all\
       \ of the in-app instruction notifications:</p>\n  <ol>\n    <li>Search (<i>ctrl+shift+F</i>)\
       \ for \"# TEMPLATE EXPLANATION ONLY\" comments and delete all the lines each\
-      \ comment informs you to</li>\n  </ol>\n</body>"}
+      \ comment informs you to</li>\n    <li></li>\n  </ol>\n</body>"}
 components: []
 is_package: true
