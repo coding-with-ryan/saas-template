@@ -6,9 +6,7 @@ container:
       pk_test_51Ns2yWAp4vQdl4epJQlckkxs3yufgTUc78712OztyDPl9ZLe8zINBcQzEuKfibOlpaaGxlwkostfBDTtf0KN5Ld900wAkOFhJK\"\
       \n  >\n</stripe-pricing-table> -->\n\n<script async src=\"https://js.stripe.com/v3/pricing-table.js\"\
       ></script>\n<stripe-pricing-table \n  anvil-name=\"stripe-pricing-table\" \n\
-      \  pricing-table-id=\"prctbl_1O2KbQIQzTvS144JZyvpVEQt\"\n  publishable-key=\"\
-      pk_live_51O2K8uIQzTvS144J7rVlLSWJeD7bHyH9mUYtcXuZAAZc6TSSTztQeVpkut1zo5BAsyyTG23Ovggehk4IUSfIVgtP00zIJ0WzHi\"\
-      >\n</stripe-pricing-table>"}
+      \  pricing-table-id=\"\"\n  publishable-key=\"\">\n</stripe-pricing-table>"}
   event_bindings: {show: form_show}
 components: []
 is_package: true
