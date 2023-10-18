@@ -1,14 +1,16 @@
 container:
   type: HtmlTemplate
   properties: {html: "<div style=\"padding:20px; font-size:20px;\">\n  \n  <h1>Getting\
-      \ Started</h1>\n  <p>Visit <a href=\"https://anvil.works\">https://anvil.works</a>\
-      \ for a full complementary guide & video for getting started with this template.</p>\n\
-      \  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n  <p>To use this template you will\
-      \ need the following:</p>\n  <ul>\n    <li>A <a href=\"https://dashboard.stripe.com/register\"\
+      \ Started</h1>\n  <p>Hello and welcome to Anvil's SaaS template! This README\
+      \ will guide you through how to beging using the template, how it works and\
+      \ how to begin building on it. There's also a <a href=\"https://anvil.works\"\
+      >full guide here</a>, if you'd rather view this information outside of the Anvil\
+      \ editor.</p>\n  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n  <p>To use this template\
+      \ you will need the following:</p>\n  <ul>\n    <li>A <a href=\"https://dashboard.stripe.com/register\"\
       >Stripe account</a></li>\n    <li>An Anvil <a href = \"https://anvil.works/pricing\"\
       >Personal Plan</a> or above</li>\n    <li>A basic knowledge of Anvil (a great\
       \ start is Anvil's <a href=\"https://anvil.works/learn/tutorials/feedback-form\"\
-      >Feedback form tutorial</a></li>\n  </ul>\n  <br>\n  <hr>\n  <h2>Configuring\
+      >Feedback form tutorial</a>)</li>\n  </ul>\n  <br>\n  <hr>\n  <h2>Configuring\
       \ Stripe and its integration with this app</h2>\n  <p>This template app uses\
       \ Stripe to handle all payment processing and subscription management. Before\
       \ you can begin using this template, you will need to first complete the following\
@@ -18,18 +20,17 @@ container:
       >business details</a> to start capturing recurring revenue</li>\n    <li>Activate\
       \ Stripe's <a href=\"https://stripe.com/docs/test-mode?locale=en-GB\">test mode</a></li>\n\
       \    <li>Copy your <a href=\"https://stripe.com/docs/keys\">Stripe account's\
-      \ Secret key</a> and set the value of stripe_test_api_key to your key in this\
-      \ app's <a href=\"https://anvil.works/docs/security/encrypting-secret-data\"\
-      >Secrets servce</a></li>\n    <li>In the Anvil app editor, publish this app\
-      \ and take a copy of the URL - we'll use this in step 6</li>\n    <li>In the\
-      \ Stripe dashboard, <a href=\"https://dashboard.stripe.com/test/pricing-tables\"\
-      >go to the Products tab and then select Pricing tables</a>. Then create a <a\
-      \ href=\"https://stripe.com/docs/payments/checkout/pricing-table\">pricing table</a>.</li>\n\
-      \      <ol type=\"a\">\n        <li>In the payment settings for each product\
-      \ you will find a \"Confirmation page\" section. In that section select \"Don't\
-      \ show confirmation page\" and enter the URL of this app that we copied in step\
-      \ 5.</li>\n      </ol>\n    <li>Open the StripePricing form in the Anvil editor\
-      \ and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
+      \ Secret key</a> and, in this app's <a href=\"https://anvil.works/docs/security/encrypting-secret-data\"\
+      >Secrets service</a>, set the value of stripe_test_api_key to your key </li>\n\
+      \    <li>In the Anvil app editor, publish this app and take a copy of the URL\
+      \ - we'll use this in step 6</li>\n    <li>In the Stripe dashboard, <a href=\"\
+      https://dashboard.stripe.com/test/pricing-tables\">go to the Products tab and\
+      \ then select Pricing tables</a>. Then create a <a href=\"https://stripe.com/docs/payments/checkout/pricing-table\"\
+      >pricing table</a>.</li>\n      <ol type=\"a\">\n        <li>In the payment\
+      \ settings for each product you will find a \"Confirmation page\" section. In\
+      \ that section select \"Don't show confirmation page\" and enter the URL of\
+      \ this app that we copied in step 5.</li>\n      </ol>\n    <li>Open the StripePricing\
+      \ form in the Anvil editor and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
       >edit the custom HTML</a></li>\n      <ol type=\"a\">\n        <li>Back in your\
       \ Stripe dashboard - Copy the \"pricing-table-id\" and paste it into the corresponding\
       \ attribute in the StripePricing form's custom HTML</li>\n        <li>Do the\
@@ -39,6 +40,7 @@ container:
       \ -> AccountSettings -> SubscriptionPanel, update line 15 to point the \"update_subscription\"\
       \ component's URL to your Stripe's customer portal URL</li>\n  </ol>\n  <p>Now\
       \ your Stripe integration is complete, it is time to try out this app.</p>\n\
-      \  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  \n  \n</body>"}
+      \  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>Start by <a href=\"https://anvil.works/docs/editor#the-anvil-editor\"\
+      >running the app</a> and following along with the instructions.</p>\n  \n</body>"}
 components: []
 is_package: true
