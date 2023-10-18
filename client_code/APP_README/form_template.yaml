@@ -40,7 +40,9 @@ container:
       \ -> AccountSettings -> SubscriptionPanel, update line 15 to point the \"update_subscription\"\
       \ component's URL to your Stripe's customer portal URL</li>\n  </ol>\n  <p>Now\
       \ your Stripe integration is complete, it is time to try out this app.</p>\n\
-      \  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>Start by <a href=\"https://anvil.works/docs/editor#the-anvil-editor\"\
-      >running the app</a> and following along with the instructions.</p>\n  \n</body>"}
+      \  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>Start by setting the startup\
+      \ form to be the Login form. Then <a href=\"https://anvil.works/docs/editor#the-anvil-editor\"\
+      >run the app</a> and follow along with the in-app instruction notifications.</p>\n\
+      \  \n</body>"}
 components: []
 is_package: true

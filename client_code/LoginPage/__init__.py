@@ -13,8 +13,6 @@ class LoginPage(LoginPageTemplate):
 
     # Any code you write here will run before the form opens.
 
-    anvil.js.get_dom_node(self.TEMPLATE_EXPLANATION_rich_text).classList.add("anvil-designer-only")
-
   def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     user = anvil.users.login_with_form(allow_cancel=True, show_signup_option=True, allow_remembered=True)

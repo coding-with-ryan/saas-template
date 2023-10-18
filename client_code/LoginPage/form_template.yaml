@@ -12,34 +12,6 @@ components:
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'DLQMFA,HOVZYD'}
-  - name: TEMPLATE_EXPLANATION_rich_text
-    properties: {content: 'Hello and welcome to Anvil''s SaaS template! If you haven''t
-        found it already, here is a guide which will take you through how this template
-        works and how to build on it:
-
-        [https://anvil.works]()
-
-
-        There are a couple of prerequisites to using this template:
-
-        1. A [Stripe account](https://stripe.com)
-
-        2. A basic knowledge of Anvil (a great start is Anvil''s Feedback form tutorial:
-
-        [https://anvil.works/learn/tutorials/feedback-form](https://anvil.works/learn/tutorials/feedback-form))
-
-        3. An Anvil Personal Plan or above
-
-
-        To get an idea of what out-of-the-box functionality the template has, start
-        by running the app and following along with the instructions.
-
-
-        Once you''ve done that, come back to the editor and follow the instructions
-        in the APP_README form. This will give you instructions to help you setup
-        your SaaS app.', font_size: 24}
-    type: RichText
-    layout_properties: {grid_position: 'HWIYIJ,RJYZZM'}
   - name: spacer_2
     properties: {height: 32}
     type: Spacer
@@ -47,7 +19,7 @@ components:
   - name: outlined_card_1
     properties: {role: outlined-card, col_spacing: medium, visible: true}
     type: ColumnPanel
-    layout_properties: {grid_position: 'IPDJEA,ELPSDO SXNBPA,YBDAKR', full_width_row: true}
+    layout_properties: {grid_position: 'IPDJEA,ELPSDO', full_width_row: true}
     components:
     - name: title
       properties: {text: 'Add your company name, tagline and/or logo here.', visible: true,
