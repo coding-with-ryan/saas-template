@@ -48,7 +48,7 @@ container:
       \ with Stripe is setup and you've seen what its's like to be a user of the app,\
       \ it's time to make this app your own.</p>\n  <p>Let's start by removing all\
       \ of the in-app instruction notifications:</p>\n  <ol>\n    <li>Search (<i>ctrl+shift+F</i>)\
-      \ for \"# TEMPLATE EXPLANATION ONLY\" comments and delete all the lines each\
-      \ comment informs you to</li>\n    <li></li>\n  </ol>\n</body>"}
+      \ for \"# TEMPLATE EXPLANATION ONLY\" comments and delete all the lines mentioned\
+      \ in the comment</li>\n    <li></li>\n  </ol>\n</body>"}
 components: []
 is_package: true
