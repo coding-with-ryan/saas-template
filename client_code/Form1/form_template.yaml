@@ -1,0 +1,6 @@
+container:
+  type: HtmlTemplate
+  properties: {html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
+      >\n  HERES SOMETHING COOL\n</center>\n<div anvil-slot=\"default\"></div>"}
+components: []
+is_package: true
