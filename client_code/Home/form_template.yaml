@@ -54,4 +54,8 @@ components:
       type: Button
       layout_properties: {grid_position: 'FJGQKY,UKCKUD', full_width_row: true}
       event_bindings: {click: calculate_button_click}
+- name: button_1
+  properties: {text: ''}
+  type: Button
+  layout_properties: {grid_position: 'HNNRBO,SEVIUZ'}
 is_package: true
