@@ -3,20 +3,21 @@ container:
   properties: {html: "<div style=\"padding:20px; font-size:20px;\">\n  \n  <h1>Getting\
       \ Started</h1>\n  <p>\n    Hello and welcome to Anvil's SaaS template! This\
       \ README will guide you through how to begin using the template, how it works\
-      \ and how to begin building on it. \n  </p>\n  <p>\n    There's also a <a href=\"\
-      https://anvil.works\">full guide here</a>, if you'd rather view this information\
-      \ outside of the Anvil editor.</p>\n  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n\
-      \  <p>To use this template you will need the following:</p>\n  <ul>\n    <li>A\
-      \ <a href=\"https://dashboard.stripe.com/register\">Stripe account</a></li>\n\
-      \    <li>An Anvil <a href = \"https://anvil.works/pricing\">Personal Plan</a>\
-      \ or above</li>\n    <li>A basic knowledge of Anvil (a great start is Anvil's\
-      \ <a href=\"https://anvil.works/learn/tutorials/feedback-form\">Feedback form\
-      \ tutorial</a>)</li>\n  </ul>\n  <br>\n  <hr>\n  <h2>Configuring Stripe and\
-      \ its integration with this app</h2>\n  <p>This template app uses Stripe to\
-      \ handle all payment processing and subscription management. Before you can\
-      \ begin using this template, you will need to first complete the following steps:</p>\n\
-      \  <ol>\n    <li><a href=\"https://dashboard.stripe.com/register\">Register\
-      \ for a Stripe account</a> and login</li>\n    <li>Enter your <a href=\"https://support.stripe.com/questions/business-information-requirements-to-use-stripe?locale=en-GB\"\
+      \ and how to begin building on it.\n    <img href=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/misc-assets/run-in-new-tab.svg\"\
+      \ />\n  </p>\n  <p>\n    There's also a <a href=\"https://anvil.works\">full\
+      \ guide here</a>, if you'd rather view this information outside of the Anvil\
+      \ editor.</p>\n  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n  <p>To use this template\
+      \ you will need the following:</p>\n  <ul>\n    <li>A <a href=\"https://dashboard.stripe.com/register\"\
+      >Stripe account</a></li>\n    <li>An Anvil <a href = \"https://anvil.works/pricing\"\
+      >Personal Plan</a> or above</li>\n    <li>A basic knowledge of Anvil (a great\
+      \ start is Anvil's <a href=\"https://anvil.works/learn/tutorials/feedback-form\"\
+      >Feedback form tutorial</a>)</li>\n  </ul>\n  <br>\n  <hr>\n  <h2>Configuring\
+      \ Stripe and its integration with this app</h2>\n  <p>This template app uses\
+      \ Stripe to handle all payment processing and subscription management. Before\
+      \ you can begin using this template, you will need to first complete the following\
+      \ steps:</p>\n  <ol>\n    <li><a href=\"https://dashboard.stripe.com/register\"\
+      >Register for a Stripe account</a> and login</li>\n    <li>Enter your <a href=\"\
+      https://support.stripe.com/questions/business-information-requirements-to-use-stripe?locale=en-GB\"\
       >business details</a> to start capturing recurring revenue</li>\n    <li>Activate\
       \ Stripe's <a href=\"https://stripe.com/docs/test-mode?locale=en-GB\">test mode</a></li>\n\
       \    <li>Copy your <a href=\"https://stripe.com/docs/keys\">Stripe account's\
