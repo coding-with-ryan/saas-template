@@ -8,7 +8,6 @@ from anvil.tables import app_tables
 
 # This is a custom HTML form built using Stripe's pricing table solution
 # https://stripe.com/docs/payments/checkout/pricing-table
-# You can either do the same with your payment provider of choice or build a form to accept payments using Anvil components
 
 class StripePricing(StripePricingTemplate):
   def __init__(self, **properties):

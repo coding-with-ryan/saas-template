@@ -15,7 +15,9 @@ import datetime
 # See your keys here: https://dashboard.stripe.com/apikeys
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
-PRICES = {"personal" : "price_1Ns3AAAp4vQdl4epHiqlYaIc", "pro" : "price_1Ns3DHAp4vQdl4ep3xtVZZ54"}
+PRICES = {"personal" : "price_X", "pro" : "price_X"}
+
+# DO I NEED TO GET THE PRICE IDs? 
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
