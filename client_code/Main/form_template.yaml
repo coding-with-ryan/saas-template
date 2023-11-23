@@ -4,15 +4,6 @@ container:
   properties: {html: '@theme:standard-page.html'}
   event_bindings: {show: form_show}
 components:
-- type: ColumnPanel
-  properties: {col_spacing: none}
-  name: content_panel
-  layout_properties: {slot: default}
-  components: []
-- name: column_panel_2
-  properties: {}
-  type: ColumnPanel
-  layout_properties: {slot: default}
 - type: FlowPanel
   properties: {align: justify, spacing: none}
   name: navbar_links
@@ -34,3 +25,12 @@ components:
     type: Button
     layout_properties: {expand: false, width: null}
     event_bindings: {click: account_button_click}
+- type: ColumnPanel
+  properties: {col_spacing: none}
+  name: content_panel
+  layout_properties: {slot: default}
+  components: []
+- name: column_panel_2
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: default}
