@@ -7,12 +7,12 @@ container:
       \ README hyperlinks, simply click on 'Run in new tab' located in the top right\
       \ of the editor and follow the instructions below.\n  </p>\n  <br>\n  <img src=\"\
       https://anvil-website-static.s3.eu-west-2.amazonaws.com/misc-assets/run-in-new-tab.svg\"\
-      \ height=\"150px\"/>\n  <br>\n  <br>\n  <p>If you prefer to access this information\
-      \ outside of the Anvil editor, you can also find a <a href=\"https://anvil.works\"\
-      \ target=\"_blank\">full guide here</a>.</p>\n  <br>\n  <p>Let's get started!</p></p>\n\
-      \  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n  <p>Before using this template,\
-      \ make sure you have the following:</p>\n  <ul>\n    <li>A <a href=\"https://dashboard.stripe.com/register\"\
-      \ target=\"_blank\">Stripe account</a></li>\n    <li>An Anvil <a href = \"https://anvil.works/pricing\"\
+      \ height=\"150px\"/>\n  <br>\n  <br>\n  <p><i>(You can also find a copy of the\
+      \ <a href=\"https://anvil.works\" target=\"_blank\">full guide here</a>.)</i></p>\n\
+      \  <br>\n  <p>Let's get started!</p></p>\n  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n\
+      \  <p>Before using this template, make sure you have the following:</p>\n  <ul>\n\
+      \    <li>A <a href=\"https://dashboard.stripe.com/register\" target=\"_blank\"\
+      >Stripe account</a></li>\n    <li>An Anvil <a href = \"https://anvil.works/pricing\"\
       \ target=\"_blank\">Personal Plan</a> or above</li>\n    <li>Basic knowledge\
       \ of Anvil (a great place to start is with Anvil's <a href=\"https://anvil.works/learn/tutorials/feedback-form\"\
       \ target=\"_blank\">Feedback form tutorial</a>)</li>\n  </ul>\n  <br>\n  <hr>\n\
