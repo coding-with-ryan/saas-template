@@ -102,11 +102,11 @@ def stripe_subscription_updated():
     stripe_price_list = self.get_prices()
     
     # Check the price/plan and update the user record in the DB accordingly
-    if price_id_of_plan == stripe_price_list["personal"]:
-      print("Checking subscription for Personal Plan: ", datetime.datetime.now())
+    # To include every product you add to your Stripe checkout, simply extend this conditional by checking 
+    # the product names price id - i.e. change the product name here: stripe_price_list["<PRODUCT-NAME>"].get("price_id")
+    if price_id_of_plan == stripe_price_list["Personal"].get("price_id"):
       user["subscription"] = "personal"
-    elif price_id_of_plan == PRICES["pro"]:
-      print("Checking subscription for Pro Plan: ", datetime.datetime.now())
+    elif price_id_of_plan == stripe_price_list["Pro"].get("price_id"):
       user["subscription"] = "pro"
 
     if payload_json.get("data").get("object").get("cancel_subscription_at_period_end"):
