@@ -17,7 +17,9 @@ stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
 PRICES = {"personal" : "price_X", "pro" : "price_X"}
 
-# DO I NEED TO GET THE PRICE IDs? 
+# DO I NEED TO GET THE PRICE IDs?
+
+
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
