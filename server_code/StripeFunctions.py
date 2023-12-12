@@ -15,10 +15,25 @@ import datetime
 # See your keys here: https://dashboard.stripe.com/apikeys
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
+# This is predicated on a flat 1:1 Product:Price relationship
 PRICES = {"personal" : "price_X", "pro" : "price_X"}
 
 # DO I NEED TO GET THE PRICE IDs?
 
+@anvil.server.callable
+def get_prices():
+  # Retrieve all prices
+    prices = stripe.Price.list()
+
+    # Extract and return the prices with product names
+    products_with_prices = {}
+    for price in prices.data:
+        product = stripe.Product.retrieve(price.product)
+        price_info = {"price_id": price.id,
+                      "product_id": price.product}
+        products_with_prices[product.name] = price_info
+    print(products_with_prices)
+    return products_with_prices
 
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
@@ -83,8 +98,11 @@ def stripe_subscription_updated():
   # If the subscription status is "Active"
   if subscription_status == "active":
     price_id_of_plan = payload_json.get("data").get("object").get("items").get("data")[0].get("price").get("id")
+    
+    stripe_price_list = self.get_prices()
+    
     # Check the price/plan and update the user record in the DB accordingly
-    if price_id_of_plan == PRICES["personal"]:
+    if price_id_of_plan == stripe_price_list["personal"]:
       print("Checking subscription for Personal Plan: ", datetime.datetime.now())
       user["subscription"] = "personal"
     elif price_id_of_plan == PRICES["pro"]:

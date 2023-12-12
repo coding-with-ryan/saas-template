@@ -12,3 +12,4 @@ class APP_README(APP_READMETemplate):
     self.init_components(**properties)
 
     # TEMPLATE EXPLANATION ONLY - THIS FORM IS ONLY HERE TO GET YOU STARTED WITH THE TEMPLATE. IT CAN BE DELETED WHEN YOU'RE READY.
+    anvil.server.call('get_prices')
