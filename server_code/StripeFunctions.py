@@ -95,11 +95,11 @@ def stripe_subscription_updated():
   if subscription_status == "active":
     price_id_of_plan = payload_json.get("data").get("object").get("items").get("data")[0].get("price").get("id")
     
-    stripe_price_list = self.get_prices()
+    stripe_price_list = get_prices()
     
     # Check the price/plan and update the user record in the DB accordingly
     if price_id_of_plan in stripe_price_list:
-        user["subscription"] = stripe_price_list[price_id_of_plan].get(product_name)
+        user["subscription"] = stripe_price_list[price_id_of_plan].get("product_name")
     
     if payload_json.get("data").get("object").get("cancel_subscription_at_period_end"):
       user["cancel_subscription_at_period_end"] = True
