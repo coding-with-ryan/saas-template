@@ -48,8 +48,12 @@ container:
       \ webhook will be for <b>when a customer is created</b>. Find the `stripe_customer_created`\
       \ function in the StripeFunctions module.</li>\n        <li>Open the <a href=\"\
       https://dashboard.stripe.com/test/webhooks\" target=\"_blank\">Webhooks page</a>\
-      \ in Stripe and click Add endpoint.</li>\n      </ul>\n    <li>Open the StripePricing\
-      \ form in the Anvil editor and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
+      \ in Stripe and click Add endpoint.</li>\n        <li>Set the endpoint URL to\
+      \ your published app's URL with \"/stripe/stripe_customer_created\" on the end\
+      \ i.e. \"https://my-saas.anvil.app/_/api/stripe/stripe_subscription_updated\"\
+      </li>\n        <li>Then select \"customer.created\" under events to listen for.</li>\n\
+      \      </ul>\n    <li>Open the StripePricing form in the Anvil editor and <a\
+      \ href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
       \ target=\"_blank\">edit the custom HTML</a></li>\n      <ol type=\"a\">\n \
       \       <li>Back in your Stripe dashboard - Copy the \"pricing-table-id\" and\
       \ paste it into the corresponding attribute in the StripePricing form's custom\
