@@ -16,24 +16,20 @@ import datetime
 stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
 
 # This is predicated on a flat 1:1 Product:Price relationship
-PRICES = {"personal" : "price_X", "pro" : "price_X"}
-
-# DO I NEED TO GET THE PRICE IDs?
-
-@anvil.server.callable
 def get_prices():
   # Retrieve all prices
-    prices = stripe.Price.list()
+  prices = stripe.Price.list()
 
-    # Extract and return the prices with product names
-    products_with_prices = {}
-    for price in prices.data:
-        product = stripe.Product.retrieve(price.product)
-        price_info = {"price_id": price.id,
-                      "product_id": price.product}
-        products_with_prices[product.name] = price_info
-    print(products_with_prices)
-    return products_with_prices
+  # Extract and return the prices with product names
+  prices_with_product_details = {}
+  for price in prices.data:
+      product = stripe.Product.retrieve(price.product)
+      product_info = {
+        "product_name": product.name,
+        "product_id": price.product
+      }
+      prices_with_product_details[price.id] = product_info
+  return prices_with_product_details
 
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
@@ -102,13 +98,9 @@ def stripe_subscription_updated():
     stripe_price_list = self.get_prices()
     
     # Check the price/plan and update the user record in the DB accordingly
-    # To include every product you add to your Stripe checkout, simply extend this conditional by checking 
-    # the product names price id - i.e. change the product name here: stripe_price_list["<PRODUCT-NAME>"].get("price_id")
-    if price_id_of_plan == stripe_price_list["Personal"].get("price_id"):
-      user["subscription"] = "personal"
-    elif price_id_of_plan == stripe_price_list["Pro"].get("price_id"):
-      user["subscription"] = "pro"
-
+    if price_id_of_plan in stripe_price_list:
+        user["subscription"] = stripe_price_list[price_id_of_plan].get(product_name)
+    
     if payload_json.get("data").get("object").get("cancel_subscription_at_period_end"):
       user["cancel_subscription_at_period_end"] = True
     else:

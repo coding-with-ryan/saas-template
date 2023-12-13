@@ -36,11 +36,11 @@ container:
       https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-product\"\
       \ target=\"_blank\">product</a> called \"Personal\"</li>\n        <li>Add one\
       \ <a href=\"https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-price\"\
-      \ target=\"_blank\">price</a> to the Personal product and copy its ID</li>\n\
-      \        <li>In the payment settings for each product you will find a \"Confirmation\
-      \ page\" section. In that section select \"Don't show confirmation page\" and\
-      \ enter the URL of this app that we copied in step 5.</li>\n      </ol>\n  \
-      \  <li>Open the StripePricing form in the Anvil editor and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
+      \ target=\"_blank\">price</a> to the Personal product</li>\n        <li>In the\
+      \ payment settings for each product you will find a \"Confirmation page\" section.\
+      \ In that section select \"Don't show confirmation page\" and enter the URL\
+      \ of this app that we copied in step 5.</li>\n      </ol>\n    <li>Open the\
+      \ StripePricing form in the Anvil editor and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
       \ target=\"_blank\">edit the custom HTML</a></li>\n      <ol type=\"a\">\n \
       \       <li>Back in your Stripe dashboard - Copy the \"pricing-table-id\" and\
       \ paste it into the corresponding attribute in the StripePricing form's custom\
