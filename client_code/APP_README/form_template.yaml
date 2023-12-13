@@ -44,16 +44,27 @@ container:
       \ is updated, so we can update our Users table with the Stripe subscription\
       \ details. <a href=\"https://stripe.com/docs/development/dashboard/register-webhook?locale=en-GB#add-a-webhook-endpoint\"\
       \ target=\"_blank\">There is a guide to setting up webhooks in Stripe here</a>\
-      \ but let me give you brief instructions.\n      <ul>\n        <li>Our first\
-      \ webhook will be for <b>when a customer is created</b>. Find the `stripe_customer_created`\
-      \ function in the StripeFunctions module.</li>\n        <li>Open the <a href=\"\
+      \ but let me give you brief instructions.\n      <ol type=\"a\">\n        <li>\
+      \ <b>Customer Created</b>\n          <ul>\n            <li>Open the <a href=\"\
       https://dashboard.stripe.com/test/webhooks\" target=\"_blank\">Webhooks page</a>\
-      \ in Stripe and click Add endpoint.</li>\n        <li>Set the endpoint URL to\
-      \ your published app's URL with \"/stripe/stripe_customer_created\" on the end\
-      \ i.e. \"https://my-saas.anvil.app/_/api/stripe/stripe_subscription_updated\"\
-      </li>\n        <li>Then select \"customer.created\" under events to listen for.</li>\n\
-      \      </ul>\n    <li>Open the StripePricing form in the Anvil editor and <a\
-      \ href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
+      \ in Stripe and click Add endpoint.</li>\n            <li>Set the endpoint URL\
+      \ to your published app's URL with \"/stripe/stripe_customer_created\" on the\
+      \ end i.e. \"https://my-saas.anvil.app/_/api/stripe/stripe_customer_created\"\
+      </li>\n            <li>Then select \"customer.created\" under events to listen\
+      \ for.</li>\n            <li>From now on, this will call the `stripe_customer_created`\
+      \ function in the StripeFunctions module every time a customer is created.</li>\n\
+      \            <br>\n            <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/webhook-setup.png\"\
+      \ />\n            <br><br>\n          </ul>\n        </li>\n        <li> <b>Subscription\
+      \ Updated</b>\n          <ul>\n            <li>Open the <a href=\"https://dashboard.stripe.com/test/webhooks\"\
+      \ target=\"_blank\">Webhooks page</a> in Stripe and click Add endpoint.</li>\n\
+      \            <li>Set the endpoint URL to your published app's URL with \"/stripe/stripe_subscription_updated\"\
+      \ on the end i.e. \"https://my-saas.anvil.app/_/api/stripe/stripe_subscription_updated\"\
+      </li>\n            <li>Then select \"customer.subscription.updated\" under events\
+      \ to listen for.</li>\n            <li>From now on, this will call the `stripe_subscription_updated`\
+      \ function in the StripeFunctions module every time a customer is created.</li>\n\
+      \          </ul>\n        </li>\n        <br>\n        <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png\"\
+      \ />\n        <br><br>\n      </ol>\n    <li>Open the StripePricing form in\
+      \ the Anvil editor and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
       \ target=\"_blank\">edit the custom HTML</a></li>\n      <ol type=\"a\">\n \
       \       <li>Back in your Stripe dashboard - Copy the \"pricing-table-id\" and\
       \ paste it into the corresponding attribute in the StripePricing form's custom\
