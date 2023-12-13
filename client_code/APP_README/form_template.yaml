@@ -39,10 +39,17 @@ container:
       \ target=\"_blank\">price</a> to the Personal product</li>\n        <li>In the\
       \ payment settings for each product you will find a \"Confirmation page\" section.\
       \ In that section select \"Don't show confirmation page\" and enter the URL\
-      \ of this app that we copied in step 5.</li>\n      </ol>\n    <li> We need\
-      \ Stripe to tell us when a new customer is created and when their subscription\
-      \ is updated, so we can update our Users table with the Stripe subscription\
-      \ details. <a href=\"https://stripe.com/docs/development/dashboard/register-webhook?locale=en-GB#add-a-webhook-endpoint\"\
+      \ of this app that we copied in step 5.</li>\n        <br>\n            <img\
+      \ src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/pricing-table.png\"\
+      \ />\n            <br><br>\n      </ol>\n    <li>Open the StripePricing form\
+      \ in the Anvil editor and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
+      \ target=\"_blank\">edit the custom HTML</a>\n      <ol type=\"a\">\n      \
+      \  <li>Back in your Stripe dashboard - Copy the \"pricing-table-id\" and paste\
+      \ it into the corresponding attribute in the StripePricing form's custom HTML</li>\n\
+      \        <li>Do the same with the \"publishable-key\"</li>\n      </ol>\n  \
+      \  </li>\n    <li> We need Stripe to tell us when a new customer is created\
+      \ and when their subscription is updated, so we can update our Users table with\
+      \ the Stripe subscription details. <a href=\"https://stripe.com/docs/development/dashboard/register-webhook?locale=en-GB#add-a-webhook-endpoint\"\
       \ target=\"_blank\">There is a guide to setting up webhooks in Stripe here</a>\
       \ but let me give you brief instructions.\n      <ol type=\"a\">\n        <li>\
       \ <b>Customer Created</b>\n          <ul>\n            <li>Open the <a href=\"\
@@ -63,13 +70,8 @@ container:
       \ to listen for.</li>\n            <li>From now on, this will call the `stripe_subscription_updated`\
       \ function in the StripeFunctions module every time a customer is created.</li>\n\
       \          </ul>\n        </li>\n        <br>\n        <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png\"\
-      \ />\n        <br><br>\n      </ol>\n    <li>Open the StripePricing form in\
-      \ the Anvil editor and <a href=\"https://anvil.works/docs/client/themes-and-styling/html-forms#editing-custom-html\"\
-      \ target=\"_blank\">edit the custom HTML</a></li>\n      <ol type=\"a\">\n \
-      \       <li>Back in your Stripe dashboard - Copy the \"pricing-table-id\" and\
-      \ paste it into the corresponding attribute in the StripePricing form's custom\
-      \ HTML</li>\n        <li>Do the same with the \"publishable-key\"</li>\n   \
-      \   </ol>\n    <li>Set up a <a href=\"https://stripe.com/docs/no-code/customer-portal?locale=en-GB\"\
+      \ />\n        <br><br>\n      </ol>\n    <li>Lastly, let's set up a way for\
+      \ users to cancel their subscription.<br>\n      Set up a <a href=\"https://stripe.com/docs/no-code/customer-portal?locale=en-GB\"\
       \ target=\"_blank\">customer portal</a> in Stripe, copy the link, and update\
       \ line 15 in this app's AccountManagement -> AccountSettings -> SubscriptionPanel\
       \ to point the \"update_subscription\" component's URL to the copied link</li>\n\
