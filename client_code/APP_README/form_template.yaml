@@ -71,13 +71,14 @@ container:
       \ function in the StripeFunctions module every time a customer is created.</li>\n\
       \          </ul>\n        </li>\n        <br>\n        <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png\"\
       \ />\n        <br><br>\n      </ol>\n    <li>Lastly, let's set up a way for\
-      \ users to cancel their subscription.<br>\n      Set up a <a href=\"https://stripe.com/docs/no-code/customer-portal?locale=en-GB\"\
-      \ target=\"_blank\">customer portal</a> in Stripe, copy the link, and update\
-      \ line 15 in this app's AccountManagement -> AccountSettings -> SubscriptionPanel\
-      \ to point the \"update_subscription\" component's URL to the copied link</li>\n\
-      \  </ol>\n  <p>With these steps completed, your Stripe integration is ready\
-      \ for testing.</p>\n  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>To test\
-      \ the app, set the Login form to be the <a href=\"https://anvil.works/docs/client/components/forms#the-startup-form-or-module\"\
+      \ users to cancel their subscription. Go the Stripe dashboard and set up a <a\
+      \ href=\"https://stripe.com/docs/no-code/customer-portal?locale=en-GB\" target=\"\
+      _blank\">customer portal</a>, copy the link, and update line 15 in this app's\
+      \ AccountManagement -> AccountSettings -> SubscriptionPanel to point the \"\
+      update_subscription\" component's URL to the copied link</li>\n  </ol>\n  <p>With\
+      \ these steps completed, your Stripe integration is ready for testing.</p>\n\
+      \  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>To test the app, set the\
+      \ Login form to be the <a href=\"https://anvil.works/docs/client/components/forms#the-startup-form-or-module\"\
       \ target=\"_blank\">\"startup form\"</a>. Then <a href=\"https://anvil.works/docs/editor#the-anvil-editor\"\
       \ target=\"_blank\">run the app</a> and follow along with the in-app instruction\
       \ notifications.</p>\n  <br>\n  <hr>\n  <h2>Making this app your own</h2>\n\
