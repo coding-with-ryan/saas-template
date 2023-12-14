@@ -22,11 +22,11 @@ container:
       \ target=\"_blank\">Register for a Stripe account</a> and login</li>\n    <li>Enter\
       \ your <a href=\"https://support.stripe.com/questions/business-information-requirements-to-use-stripe?locale=en-GB\"\
       \ target=\"_blank\">business details</a> to start capturing recurring revenue\
-      \ (or skip this step if you're just using <a href=\"https://stripe.com/docs/test-mode?locale=en-GB\"\
+      \ (or skip this step if you're only going to use <a href=\"https://stripe.com/docs/test-mode?locale=en-GB\"\
       >Stripe's test mode</a>)</li>\n    <li>Activate Stripe's <a href=\"https://stripe.com/docs/test-mode?locale=en-GB\"\
       \ target=\"_blank\">test mode</a></li>\n    <li>Copy your <a href=\"https://stripe.com/docs/keys\"\
       >Stripe account's Secret key</a> and, in this app's <a href=\"https://anvil.works/docs/security/encrypting-secret-data\"\
-      \ target=\"_blank\">Secrets service</a>, set the value of stripe_test_api_key\
+      \ target=\"_blank\">Secrets service</a>, set the value of \"stripe_test_api_key\"\
       \ to your key </li>\n    <li>In the Anvil app editor, publish this app and take\
       \ a copy of the URL - we'll use this in step 6</li>\n    <li>In the Stripe dashboard,\
       \ <a href=\"https://dashboard.stripe.com/test/pricing-tables\" target=\"_blank\"\
