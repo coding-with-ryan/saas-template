@@ -31,6 +31,20 @@ def get_prices():
       prices_with_product_details[price.id] = product_info
   return prices_with_product_details
 
+@anvil.server.callable
+def get_product_names():
+  try:
+      # Retrieve a list of products from the Stripe API
+      products = stripe.Product.list()  # You can adjust the limit as needed
+      # Extract product names from the response
+      product_names = [product.name for product in products]
+      return product_names
+
+  except stripe.error.StripeError as e:
+      print(f"Error: {e}")
+      return []
+
+
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
