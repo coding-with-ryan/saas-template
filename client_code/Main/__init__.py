@@ -9,6 +9,7 @@ from ..Home import Home
 from ..StripePricing import StripePricing
 
 from ..AccountManagement.AccountPage import AccountPage as AccountPage
+from ..user_permissions import PRODUCT_NAMES
 
 class Main(MainTemplate):
   def __init__(self, **properties):
@@ -46,7 +47,7 @@ class Main(MainTemplate):
 
   # TEMPLATE EXPLANATION ONLY - DELETE ROWS 47-55 WHEN YOU'RE READY    
   def TEMPLATE_EXPLANATION(self):
-    if anvil.users.get_user()["subscription"] in ["personal", "pro"] and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
+    if anvil.users.get_user()["subscription"] in PRODUCT_NAMES and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
       Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
     elif anvil.users.get_user()["cancel_subscription_at_period_end"]:
       Notification("You've cancelled your subscription and, once it expires, your user records subscription status will be updated.", title="Template Explanation", timeout=None, style="warning").show()
