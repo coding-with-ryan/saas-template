@@ -1,4 +1,7 @@
-dependencies: []
+dependencies:
+- dep_id: dep_99a2din8zu7xos
+  version: {dev: false}
+  resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
