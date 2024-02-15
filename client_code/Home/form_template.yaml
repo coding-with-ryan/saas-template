@@ -5,53 +5,50 @@ components:
   type: ColumnPanel
   layout_properties: {grid_position: 'VVUZGK,KDMOFP', full_width_row: true}
   components:
-  - name: outlined_card_1
-    properties: {role: tonal-card, col_widths: '{}'}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'BTRARL,TUYLXQ'}
+  - name: card_1
+    properties: {}
+    type: form:dep_t5fazqnupiuu3:Components.Card
+    layout_properties: {grid_position: 'CZRRZR,QWOTKE'}
     components:
-    - name: label_1
-      properties: {icon: 'fa:percent', role: headline, text: Percentage of calculator,
-        align: center}
-      type: Label
-      layout_properties: {grid_position: ''}
+    - name: heading_1
+      properties: {text: Percentage of calculator, material_icon: percent, align: center}
+      type: form:dep_t5fazqnupiuu3:Components.Heading
+      layout_properties: {slot: card-content-slot}
     - name: rich_text_1
-      properties: {content: '{number_1} is what percentage of {number_2} ?', align: center,
+      properties: {content: '{number_1} is what percentage of {number_2}?', align: center,
         font_size: 22}
       type: RichText
-      layout_properties: {grid_position: 'YAAKTG,CLWBMD', full_width_row: true}
+      layout_properties: {slot: card-content-slot}
       components:
       - name: number_1_textbox
-        properties: {type: number, placeholder: '', align: center, hide_text: false,
-          text: '10', role: outlined}
-        type: TextBox
-        layout_properties: {slot: number_1}
+        properties: {align: center, appearance: filled, error: false}
+        type: form:dep_t5fazqnupiuu3:Components.TextInput.TextField
+        layout_properties: {slot: number_1, width: 200}
       - name: number_2_textbox
-        properties: {type: number, placeholder: '', align: center, hide_text: false,
-          text: '100', role: outlined}
-        type: TextBox
-        layout_properties: {slot: number_2}
-    - name: answer_rich_text
-      properties: {content: '{number_1} is {percentage} of {number_2}', visible: false,
-        align: center, font_size: 20}
+        properties: {align: center, display_font_size: -9}
+        type: form:dep_t5fazqnupiuu3:Components.TextInput.TextField
+        layout_properties: {slot: number_2, width: 200}
+    - name: answer_tich_text
+      properties: {content: '{number_1} is {percentage} of {number_2}', align: center,
+        visible: false}
       type: RichText
-      layout_properties: {grid_position: 'ZWPQPW,KZZGBQ'}
+      layout_properties: {slot: card-content-slot}
       components:
-      - name: percentage_label
-        properties: {icon: '', icon_align: right}
-        type: Label
-        layout_properties: {slot: percentage}
       - name: original_number_1
         properties: {}
         type: Label
         layout_properties: {slot: number_1}
+      - name: percentage_label
+        properties: {}
+        type: Label
+        layout_properties: {slot: percentage}
       - name: original_number_2
         properties: {}
         type: Label
         layout_properties: {slot: number_2}
     - name: calculate_button
-      properties: {text: Calculate, role: filled-button, icon: 'fa:calculator', icon_align: right}
-      type: Button
-      layout_properties: {grid_position: 'FJGQKY,UKCKUD', full_width_row: true}
+      properties: {text: Calculate, icon_align: right, align: center, appearance: filled}
+      type: form:dep_t5fazqnupiuu3:Components.Button
+      layout_properties: {slot: card-content-slot}
       event_bindings: {click: calculate_button_click}
 is_package: true
